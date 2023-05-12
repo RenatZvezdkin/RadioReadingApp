@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:CrossplatformRadioApp.ViewModels"
+             xmlns:models="clr-namespace:CrossplatformRadioApp.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CrossplatformRadioApp.Views.FilesPage">
+    <UserControl.DataContext>
+        <viewModels:FilesPageViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Styles>
+        <StyleInclude Source="avares://CrossplatformRadioApp/Views/MainStyles.axaml"/>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="*, 75" Classes="Default">
+        <ListBox ItemsSource="{Binding FileModels}" 
+                 SelectedItems="{Binding SelectedFileModels}"
+                 SelectionMode="Multiple" Grid.Row="0" Background="Transparent"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="models:FileModel">
+                    <StackPanel 
+                        Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <TextBlock FontSize="25" Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Format}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="1" ColumnDefinitions="*,*" Classes="Default">
+            <Button Content="Загрузить файлы" Grid.Column="0"
+                    Command="{Binding SaveToDirCommand}"/>
+            <Button Content="Удалить файлы" Grid.Column="1"
+                    Command="{Binding DeleteCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
