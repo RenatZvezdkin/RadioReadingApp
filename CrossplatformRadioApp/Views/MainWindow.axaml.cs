@@ -7,6 +7,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        CC.Content = new FilesPage(this);
+        CC.Content = new MainPage();
+        Manager.Instance.InitMainWindow(this);
     }
 }

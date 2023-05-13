@@ -1,20 +1,27 @@
 using System.IO;
 using System.Reflection;
+using Avalonia.Controls;
+using CrossplatformRadioApp.Views;
 
 namespace CrossplatformRadioApp;
 
 public class Manager
 {
-    private string _getExecutingPath { get => Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"..\..\..\")); }
-    public string ConnectionString
+    private UserControl _selectedPage;
+    private MainWindow _mainWindow;
+    public MainWindow MainWindow => _mainWindow;
+    public UserControl SelectedPage
     {
-        get
+        get => _selectedPage;
+        set
         {
-            return File.ReadAllText(_getExecutingPath+"connectionstring.txt");
+            _selectedPage = value;
+            _mainWindow.CC.Content = value;
         }
     }
-
-    private static Manager instance = new Manager();
-    public static Manager Instance => instance;
+    public void InitMainWindow(MainWindow window) => _mainWindow = window;
+    private string _getExecutingPath { get => Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"..\..\..\")); }
+    public string ConnectionString => File.ReadAllText(_getExecutingPath+"connectionstring.txt");
+    public static Manager Instance { get; } = new();
     
 }

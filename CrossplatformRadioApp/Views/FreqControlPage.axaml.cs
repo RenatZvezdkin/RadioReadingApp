@@ -1,13 +1,12 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using CrossplatformRadioApp.ViewModels;
 
 namespace CrossplatformRadioApp.Views;
 
-public partial class FilesPage : UserControl
+public partial class FreqControlPage : UserControl
 {
-    public FilesPage()
+    public FreqControlPage()
     {
         InitializeComponent();
     }
