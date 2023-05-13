@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Reactive;
-using Avalonia.Controls;
 using Avalonia.Platform.Storage;
 using CrossplatformRadioApp.Models;
-using CrossplatformRadioApp.Views;
 using MessageBox.Avalonia.Enums;
 using ReactiveUI;
 
 namespace CrossplatformRadioApp.ViewModels
 {
-    class FilesPageViewModel : ViewModelBase
+    class FilesPageViewModel : ViewModelBase, INotifyCollectionChanged
     {
         private FilePickerSaveOptions _saveFileDialog;
+        private FilePickerOpenOptions _openFileDealog;
         public ObservableCollection<FileModel> FileModels { get; }
         public List<FileModel>? _selectedFileModels;
         public List<FileModel>? SelectedFileModels
@@ -34,19 +32,33 @@ namespace CrossplatformRadioApp.ViewModels
         public FilesPageViewModel()
         {
             FileModels = new ObservableCollection<FileModel>(FileModel.GetFileModelsFromDatabase());
-            _saveFileDialog = new FilePickerSaveOptions();
+            _saveFileDialog = new FilePickerSaveOptions
+            {
+                DefaultExtension = "???",
+                SuggestedFileName = "Несколько файлов"
+            };
+            _openFileDealog = new FilePickerOpenOptions
+            {
+                AllowMultiple = true
+            };
+            FileModels.CollectionChanged += CollectionChanged;
+            AddFileToDbCommand = new RelayCommand(o =>
+            {
+                using var window = Manager.Instance.MainWindow.StorageProvider.OpenFilePickerAsync(_openFileDealog);
+                window.Wait();
+                FileModel.WriteMultipleFilesIntoDatabase(
+                    window.Result.
+                        Select(storageFile => storageFile?.TryGetLocalPath()).
+                        Where(path => !string.IsNullOrWhiteSpace(path)));
+            });
             SaveToDirCommand = new RelayCommand(o =>
             {
-                _saveFileDialog.DefaultExtension = "???";
-                _saveFileDialog.SuggestedFileName = "Несколько файлов";
-                using (var window = Manager.Instance.MainWindow.StorageProvider.SaveFilePickerAsync(_saveFileDialog))
-                {
-                    window.Wait();
-                    var localPath = window.Result?.TryGetLocalPath();
-                    if (SelectedFileModels.Any() && !string.IsNullOrWhiteSpace(localPath))
-                        FileModel.SaveMultipleFileModelsToDirectory(SelectedFileModels, localPath);
-                }
-                },o => AnyModelsSelected);
+                using var window = Manager.Instance.MainWindow.StorageProvider.SaveFilePickerAsync(_saveFileDialog);
+                window.Wait();
+                var localPath = window.Result?.TryGetLocalPath();
+                if (SelectedFileModels.Any() && !string.IsNullOrWhiteSpace(localPath))
+                    FileModel.SaveMultipleFileModelsToDirectory(SelectedFileModels, localPath);
+            },o => AnyModelsSelected);
             DeleteCommand = new RelayCommand(o =>
             {
                 var task = MessageBox.Avalonia.MessageBoxManager
@@ -59,6 +71,7 @@ namespace CrossplatformRadioApp.ViewModels
             SelectedFileModels = null;
         }
         private bool AnyModelsSelected => SelectedFileModels != null && SelectedFileModels.Any();
-        
+
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
     }
 }
