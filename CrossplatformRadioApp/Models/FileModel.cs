@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossplatformRadioApp.Context;
 using CrossplatformRadioApp.Entities;
 
@@ -27,18 +25,16 @@ namespace CrossplatformRadioApp.Models
         {
             string filepath = Path.Combine(directory, Name+"."+Format);
             if (File.Exists(filepath))
-                if(actionIfFileExist!=null && actionIfFileExist.Invoke())
+                if(actionIfFileExist==null || actionIfFileExist.Invoke())
                     File.Delete(filepath);
                 else
                     return;
 
-            using (var database = new MyDbContext())
-            using (var fileStream = File.Create(filepath))
-            {
-                var fileBytes = database.Savedfiles.Find(_id)?.ByteCode;
-                fileStream.Write(fileBytes, 0, fileBytes.Length);
-                fileStream.Flush();
-            }
+            using var database = new MyDbContext();
+            using var fileStream = File.Create(filepath);
+            var fileBytes = database.Savedfiles.Find(_id)?.ByteCode;
+            fileStream.Write(fileBytes, 0, fileBytes.Length);
+            fileStream.Flush();
         }
         public bool DeleteFromDatabase(ObservableCollection<FileModel>? observableCollection = null)
         {
@@ -88,7 +84,8 @@ namespace CrossplatformRadioApp.Models
             {
                 FileName = Path.GetFileNameWithoutExtension(filepath),
                 Format = Path.GetExtension(filepath),
-                ByteCode = File.ReadAllBytes(filepath)
+                ByteCode = File.ReadAllBytes(filepath),
+                DateOfSaving = DateTime.UtcNow
             };
             using (var database = new MyDbContext())
             {
@@ -109,7 +106,8 @@ namespace CrossplatformRadioApp.Models
                     {
                         FileName = Path.GetFileNameWithoutExtension(filepath),
                         Format = Path.GetExtension(filepath),
-                        ByteCode = File.ReadAllBytes(filepath)
+                        ByteCode = File.ReadAllBytes(filepath),
+                        DateOfSaving = DateTime.UtcNow
                     };
                     database.Savedfiles.Add(newFile);
                     return new FileModel(newFile);

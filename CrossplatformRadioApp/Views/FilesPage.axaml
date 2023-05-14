@@ -19,11 +19,10 @@
                  SelectionMode="Multiple, Toggle" Grid.Row="0" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="models:FileModel">
-                    <StackPanel 
-                        Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Grid ColumnDefinitions="*, 100">
                         <TextBlock FontSize="25" Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding Format}"/>
-                    </StackPanel>
+                        <TextBlock HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Format}" FontSize="25"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

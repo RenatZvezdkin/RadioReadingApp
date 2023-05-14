@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Controls;
@@ -10,7 +11,6 @@ using Avalonia.Platform.Storage;
 using CrossplatformRadioApp.Models;
 using DynamicData;
 using MessageBox.Avalonia.Enums;
-using ReactiveUI;
 
 namespace CrossplatformRadioApp.ViewModels
 {
@@ -23,8 +23,7 @@ namespace CrossplatformRadioApp.ViewModels
             FileModels = new ObservableCollection<FileModel>(FileModel.GetFileModelsFromDatabase());
             _saveFileDialog = new FilePickerSaveOptions
             {
-                DefaultExtension = "???",
-                SuggestedFileName = "Несколько файлов"
+                SuggestedFileName = "Выбранный файл"
             };
             _openFileDealog = new FilePickerOpenOptions
             {
@@ -43,11 +42,15 @@ namespace CrossplatformRadioApp.ViewModels
             });
             SaveToDirCommand = new RelayCommand(async o =>
             {
+                _saveFileDialog.SuggestedStartLocation = await TopLevel.
+                    GetTopLevel(Manager.Instance.MainWindow).
+                    StorageProvider.
+                    TryGetWellKnownFolderAsync(WellKnownFolder.Desktop);
                 var localPath = (await Manager.Instance.MainWindow.StorageProvider.
                         SaveFilePickerAsync(_saveFileDialog))?.
                     TryGetLocalPath();
                 if (AnyModelsSelected && !string.IsNullOrWhiteSpace(localPath))
-                    FileModel.SaveMultipleFileModelsToDirectory(SelectedFileModels, localPath);
+                    FileModel.SaveMultipleFileModelsToDirectory(SelectedFileModels, Path.GetDirectoryName(localPath));
             },o => AnyModelsSelected);
             DeleteCommand = new RelayCommand(async o =>
             {
