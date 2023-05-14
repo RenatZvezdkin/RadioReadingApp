@@ -18,12 +18,15 @@ namespace CrossplatformRadioApp.ViewModels
     {
         public FilesPageViewModel()
         {
-            SelectModel = new SelectionModel<FileModel>();
+            SelectModel = new SelectionModel<FileModel>
+            {
+                SingleSelect = false,
+            };
             SelectModel.SelectionChanged += SelectedItemsChangeEvent;
             FileModels = new ObservableCollection<FileModel>(FileModel.GetFileModelsFromDatabase());
             _saveFileDialog = new FilePickerSaveOptions
             {
-                SuggestedFileName = "Выбранный файл"
+                SuggestedFileName = "Выбранный(ые) файл(ы)"
             };
             _openFileDealog = new FilePickerOpenOptions
             {
