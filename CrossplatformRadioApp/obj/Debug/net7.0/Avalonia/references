@@ -19,15 +19,9 @@
 /home/abstractredy/.nuget/packages/avalonia.themes.simple/11.0.0-preview8/lib/net6.0/Avalonia.Themes.Simple.dll
 /home/abstractredy/.nuget/packages/avalonia.win32/11.0.0-preview8/lib/net6.0/Avalonia.Win32.dll
 /home/abstractredy/.nuget/packages/avalonia.x11/11.0.0-preview8/lib/net6.0/Avalonia.X11.dll
-/home/abstractredy/.nuget/packages/portable.bouncycastle/1.9.0/lib/netstandard2.0/BouncyCastle.Crypto.dll
-/home/abstractredy/.nuget/packages/cdata.mariadb.entityframeworkcore/22.0.8462/lib/net6.0/CData.EntityFrameworkCore.MariaDB.dll
 /home/abstractredy/.nuget/packages/colortextblock.avalonia/11.0.0-b1/lib/net6.0/ColorTextBlock.Avalonia.dll
 /home/abstractredy/.nuget/packages/dynamicdata/7.9.5/lib/net6.0/DynamicData.dll
-/home/abstractredy/.nuget/packages/google.protobuf/3.21.9/lib/net5.0/Google.Protobuf.dll
 /home/abstractredy/.nuget/packages/harfbuzzsharp/2.8.2.3/lib/net6.0/HarfBuzzSharp.dll
-/home/abstractredy/.nuget/packages/k4os.compression.lz4/1.3.5/lib/net6.0/K4os.Compression.LZ4.dll
-/home/abstractredy/.nuget/packages/k4os.compression.lz4.streams/1.3.5/lib/net6.0/K4os.Compression.LZ4.Streams.dll
-/home/abstractredy/.nuget/packages/k4os.hash.xxhash/1.0.8/lib/net6.0/K4os.Hash.xxHash.dll
 /home/abstractredy/.nuget/packages/markdown.avalonia.tight/11.0.0-b1/lib/net6.0/Markdown.Avalonia.dll
 /home/abstractredy/.nuget/packages/messagebox.avalonia/2.3.1-prev7.0/lib/netstandard2.0/MessageBox.Avalonia.dll
 /home/abstractredy/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
@@ -54,8 +48,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/Microsoft.Win32.Registry.dll
 /home/abstractredy/.nuget/packages/microsoft.win32.systemevents/6.0.0/lib/net6.0/Microsoft.Win32.SystemEvents.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/mscorlib.dll
-/home/abstractredy/.nuget/packages/mysql.data/8.0.33/lib/net7.0/MySql.Data.dll
-/home/abstractredy/.nuget/packages/mysql.entityframeworkcore/7.0.2/lib/net7.0/MySql.EntityFrameworkCore.dll
 /home/abstractredy/.nuget/packages/mysqlconnector/2.2.5/lib/net7.0/MySqlConnector.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/netstandard.dll
 /home/abstractredy/.nuget/packages/pomelo.entityframeworkcore.mysql/7.0.0/lib/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
@@ -75,7 +67,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.ComponentModel.EventBasedAsync.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.ComponentModel.Primitives.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.ComponentModel.TypeConverter.dll
-/home/abstractredy/.nuget/packages/system.configuration.configurationmanager/4.4.1/ref/netstandard2.0/System.Configuration.ConfigurationManager.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Configuration.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Console.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Core.dll
@@ -114,7 +105,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.FileSystem.Watcher.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.IsolatedStorage.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.MemoryMappedFiles.dll
-/home/abstractredy/.nuget/packages/system.io.pipelines/6.0.3/lib/net6.0/System.IO.Pipelines.dll
+/home/abstractredy/.nuget/packages/system.io.pipelines/6.0.0/lib/net6.0/System.IO.Pipelines.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.Pipes.AccessControl.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.Pipes.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.IO.UnmanagedMemoryStream.dll
@@ -185,7 +176,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.Cryptography.Primitives.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.Cryptography.X509Certificates.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.dll
-/home/abstractredy/.nuget/packages/system.security.permissions/4.7.0/ref/netcoreapp3.0/System.Security.Permissions.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.Principal.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.Principal.Windows.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Security.SecureString.dll
@@ -213,7 +203,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Web.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Web.HttpUtility.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Windows.dll
-/home/abstractredy/.nuget/packages/system.windows.extensions/4.7.0/ref/netcoreapp3.0/System.Windows.Extensions.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Xml.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Xml.Linq.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.5/ref/net7.0/System.Xml.ReaderWriter.dll
