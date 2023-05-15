@@ -11,19 +11,20 @@ namespace CrossplatformRadioApp.Models
     class FileModel
     {
         private string _name;
-        public string Name { get => _name; }
+        public string Name => _name; 
         private string _format;
-        public string Format { get => _format; }
+        public string Format => _format; 
+        public string NameWithFormat => string.IsNullOrWhiteSpace(Format) ? Name: Name+"."+Format;
         private int _id;
-        public FileModel(Savedfile databaseEntry)
+        public FileModel(SavedFile databaseEntry)
         {
             _id = databaseEntry.Id;
             _name = databaseEntry.FileName;
-            _format = databaseEntry.Format.Substring(1);
+            _format = databaseEntry.Format;
         }
         public void SaveToDirectory(string directory, Func<bool>? actionIfFileExist=null)
         {
-            string filepath = Path.Combine(directory, Name+"."+Format);
+            string filepath = Path.Combine(directory, NameWithFormat);
             if (File.Exists(filepath))
                 if(actionIfFileExist==null || actionIfFileExist.Invoke())
                     File.Delete(filepath);
@@ -32,7 +33,7 @@ namespace CrossplatformRadioApp.Models
 
             using var database = new MyDbContext();
             using var fileStream = File.Create(filepath);
-            var fileBytes = database.Savedfiles.Find(_id)?.ByteCode;
+            var fileBytes = database.SavedFiles.Find(_id)?.ByteCode;
             fileStream.Write(fileBytes, 0, fileBytes.Length);
             fileStream.Flush();
         }
@@ -41,10 +42,10 @@ namespace CrossplatformRadioApp.Models
             bool deleted = true;
             using (var database = new MyDbContext())
             {
-                var databaseEntry = database.Savedfiles.Find(_id);
+                var databaseEntry = database.SavedFiles.Find(_id);
                 try
                 {
-                    database.Savedfiles.Remove(databaseEntry);
+                    database.SavedFiles.Remove(databaseEntry);
                     database.SaveChanges();
                     observableCollection?.Remove(this);
                 }
@@ -60,7 +61,7 @@ namespace CrossplatformRadioApp.Models
             List<FileModel> fileModels;
             using (var database = new MyDbContext())
             {
-                fileModels = database.Savedfiles.ToList().Select(dbEntry => new FileModel(dbEntry)).ToList();
+                fileModels = database.SavedFiles.ToList().Select(dbEntry => new FileModel(dbEntry)).ToList();
             }
             return fileModels;
         }
@@ -80,7 +81,7 @@ namespace CrossplatformRadioApp.Models
         }
         public static FileModel WriteFileIntoDatabase(string filepath)
         {
-            var newFile = new Savedfile
+            var newFile = new SavedFile
             {
                 FileName = Path.GetFileNameWithoutExtension(filepath),
                 Format = Path.GetExtension(filepath),
@@ -89,7 +90,7 @@ namespace CrossplatformRadioApp.Models
             };
             using (var database = new MyDbContext())
             {
-                database.Savedfiles.Add(newFile);
+                database.SavedFiles.Add(newFile);
                 try { database.SaveChanges(); }
                 catch { newFile = null; }
             }
@@ -102,14 +103,14 @@ namespace CrossplatformRadioApp.Models
             {
                 result = filepaths.Select(filepath =>
                 {
-                    var newFile = new Savedfile
+                    var newFile = new SavedFile
                     {
                         FileName = Path.GetFileNameWithoutExtension(filepath),
                         Format = Path.GetExtension(filepath),
                         ByteCode = File.ReadAllBytes(filepath),
                         DateOfSaving = DateTime.UtcNow
                     };
-                    database.Savedfiles.Add(newFile);
+                    database.SavedFiles.Add(newFile);
                     return new FileModel(newFile);
                 }).ToList();
 

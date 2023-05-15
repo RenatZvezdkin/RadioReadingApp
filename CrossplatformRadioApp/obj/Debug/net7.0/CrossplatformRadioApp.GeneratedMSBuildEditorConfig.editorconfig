@@ -13,22 +13,22 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CrossplatformRadioApp
-build_property.ProjectDir = C:\Users\Ренатзве Здкин\Desktop\ллл\CrossplatformRadioApp\CrossplatformRadioApp\
+build_property.ProjectDir = /home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/App.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/FilesPage.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/Views/FilesPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/FreqControlPage.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/Views/FreqControlPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/MainPage.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/Views/MainPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/MainStyles.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/Views/MainStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/MainWindow.axaml]
+[/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

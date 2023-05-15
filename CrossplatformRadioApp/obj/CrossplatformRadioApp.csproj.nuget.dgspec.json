@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ренатзве Здкин\\Desktop\\ллл\\CrossplatformRadioApp\\CrossplatformRadioApp\\CrossplatformRadioApp.csproj": {}
+    "/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/CrossplatformRadioApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ренатзве Здкин\\Desktop\\ллл\\CrossplatformRadioApp\\CrossplatformRadioApp\\CrossplatformRadioApp.csproj": {
+    "/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/CrossplatformRadioApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ренатзве Здкин\\Desktop\\ллл\\CrossplatformRadioApp\\CrossplatformRadioApp\\CrossplatformRadioApp.csproj",
+        "projectUniqueName": "/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/CrossplatformRadioApp.csproj",
         "projectName": "CrossplatformRadioApp",
-        "projectPath": "C:\\Users\\Ренатзве Здкин\\Desktop\\ллл\\CrossplatformRadioApp\\CrossplatformRadioApp\\CrossplatformRadioApp.csproj",
-        "packagesPath": "C:\\Users\\Ренатзве Здкин\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ренатзве Здкин\\Desktop\\ллл\\CrossplatformRadioApp\\CrossplatformRadioApp\\obj\\",
+        "projectPath": "/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/CrossplatformRadioApp.csproj",
+        "packagesPath": "/home/abstractredy/.nuget/packages/",
+        "outputPath": "/home/abstractredy/RiderProjects/RadioReadingApp/CrossplatformRadioApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ренатзве Здкин\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/abstractredy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,9 +74,9 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
-            "MySql.EntityFrameworkCore": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -97,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

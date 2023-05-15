@@ -45,10 +45,6 @@ namespace CrossplatformRadioApp.ViewModels
             });
             SaveToDirCommand = new RelayCommand(async o =>
             {
-                _saveFileDialog.SuggestedStartLocation = await TopLevel.
-                    GetTopLevel(Manager.Instance.MainWindow).
-                    StorageProvider.
-                    TryGetWellKnownFolderAsync(WellKnownFolder.Desktop);
                 var localPath = (await Manager.Instance.MainWindow.StorageProvider.
                         SaveFilePickerAsync(_saveFileDialog))?.
                     TryGetLocalPath();
