@@ -21,10 +21,10 @@ public class Manager
         }
     }
     public string GoUpByDirectory(string path, int foldersToGoUp = 1)
-        => Path.GetFullPath(Path.Combine(Path.GetDirectoryName(path), string.Concat(Enumerable.Repeat(@"..\",foldersToGoUp))));
+        => foldersToGoUp<=1? Directory.GetParent(path).ToString() : GoUpByDirectory(Directory.GetParent(path).ToString(),foldersToGoUp-1);
     public void InitMainWindow(MainWindow window) => _mainWindow = window;
     private string _getExecutingPath => 
-        GoUpByDirectory(Assembly.GetExecutingAssembly().Location, 3);
+        GoUpByDirectory(Assembly.GetExecutingAssembly().Location, 4)+"/";
     public string ConnectionString => File.ReadAllText(_getExecutingPath+"connectionstring.txt");
     public static Manager Instance { get; } = new();
     
