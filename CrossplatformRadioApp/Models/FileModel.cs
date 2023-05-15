@@ -88,6 +88,8 @@ namespace CrossplatformRadioApp.Models
                 ByteCode = File.ReadAllBytes(filepath),
                 DateOfSaving = DateTime.UtcNow
             };
+            if (newFile.Format.StartsWith('.'))
+                newFile.Format = newFile.Format.Substring(1);
             using (var database = new MyDbContext())
             {
                 database.SavedFiles.Add(newFile);
