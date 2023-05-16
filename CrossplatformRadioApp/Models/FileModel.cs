@@ -81,15 +81,7 @@ namespace CrossplatformRadioApp.Models
         }
         public static FileModel WriteFileIntoDatabase(string filepath)
         {
-            var newFile = new SavedFile
-            {
-                FileName = Path.GetFileNameWithoutExtension(filepath),
-                Format = Path.GetExtension(filepath),
-                ByteCode = File.ReadAllBytes(filepath),
-                DateOfSaving = DateTime.UtcNow
-            };
-            if (newFile.Format.StartsWith('.'))
-                newFile.Format = newFile.Format.Substring(1);
+            var newFile = _GetFileAsDBEntry(filepath);
             using (var database = new MyDbContext())
             {
                 database.SavedFiles.Add(newFile);
@@ -105,13 +97,7 @@ namespace CrossplatformRadioApp.Models
             {
                 result = filepaths.Select(filepath =>
                 {
-                    var newFile = new SavedFile
-                    {
-                        FileName = Path.GetFileNameWithoutExtension(filepath),
-                        Format = Path.GetExtension(filepath),
-                        ByteCode = File.ReadAllBytes(filepath),
-                        DateOfSaving = DateTime.UtcNow
-                    };
+                    var newFile = _GetFileAsDBEntry(filepath);
                     database.SavedFiles.Add(newFile);
                     return new FileModel(newFile);
                 }).ToList();
@@ -120,6 +106,20 @@ namespace CrossplatformRadioApp.Models
                 catch { result = null; }
             }
             return result;
+        }
+
+        private static SavedFile _GetFileAsDBEntry(string filepath)
+        {
+            var newFile = new SavedFile
+            {
+                FileName = Path.GetFileNameWithoutExtension(filepath),
+                Format = Path.GetExtension(filepath),
+                ByteCode = File.ReadAllBytes(filepath),
+                DateOfSaving = DateTime.UtcNow
+            };
+            if (newFile.Format.StartsWith('.'))
+                newFile.Format = newFile.Format.Substring(1);
+            return newFile;
         }
     }
 }
