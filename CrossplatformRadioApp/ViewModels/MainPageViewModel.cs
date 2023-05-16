@@ -11,6 +11,6 @@ public class MainPageViewModel: ViewModelBase
     public MainPageViewModel()
     {
         MoveToSavedFilesCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new FilesPage());
-        MoveToFreqControlCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new FreqControlPage());
+        MoveToFreqControlCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new FreqControlPage(), o =>false);
     }
 }

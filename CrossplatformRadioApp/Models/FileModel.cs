@@ -13,14 +13,21 @@ namespace CrossplatformRadioApp.Models
         private string _name;
         public string Name => _name; 
         private string _format;
-        public string Format => _format; 
+        public string? Format => _format==""? null: _format; 
         public string NameWithFormat => string.IsNullOrWhiteSpace(Format) ? Name: Name+"."+Format;
         private int _id;
+        private string _creationDateString;
+        public string CreationDate => _creationDateString;
+        private long _fileSize;
+        public string FileSize => _fileSize.ToString();
         public FileModel(SavedFile databaseEntry)
         {
             _id = databaseEntry.Id;
             _name = databaseEntry.FileName;
             _format = databaseEntry.Format;
+            _fileSize = databaseEntry.ByteCode.LongLength;
+            _creationDateString = databaseEntry.DateOfSaving.ToLocalTime().ToShortDateString() +" "+
+                                  databaseEntry.DateOfSaving.ToLocalTime().ToShortTimeString();
         }
         public void SaveToDirectory(string directory, Func<bool>? actionIfFileExist=null)
         {
@@ -93,17 +100,21 @@ namespace CrossplatformRadioApp.Models
         public static List<FileModel> WriteMultipleFilesIntoDatabase(IEnumerable<string> filepaths)
         {
             List<FileModel> result;
-            using (var database = new MyDbContext())
+            using var database = new MyDbContext();
+            result = filepaths.Select(filepath =>
             {
-                result = filepaths.Select(filepath =>
-                {
-                    var newFile = _GetFileAsDBEntry(filepath);
-                    database.SavedFiles.Add(newFile);
-                    return new FileModel(newFile);
-                }).ToList();
+                var newFile = _GetFileAsDBEntry(filepath);
+                database.SavedFiles.Add(newFile);
+                return new FileModel(newFile);
+            }).ToList();
 
-                try { database.SaveChanges(); }
-                catch { result = null; }
+            try
+            {
+                database.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                result = null;
             }
             return result;
         }

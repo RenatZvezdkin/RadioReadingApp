@@ -13,20 +13,23 @@
         <StyleInclude Source="avares://CrossplatformRadioApp/Views/MainStyles.axaml"/>
     </UserControl.Styles>
     
-    <Grid RowDefinitions="*, 75" Classes="Default">
+    <Grid RowDefinitions="75, *, 75" Classes="Default">
+        <Button Content="Обратно" Width="100" HorizontalAlignment="Left"
+                Margin="5" Command="{Binding BackCommand}"/>
         <ListBox ItemsSource="{Binding FileModels}" 
                  Selection="{Binding SelectModel}"
-                 SelectionMode="Multiple, Toggle" Grid.Row="0" Background="Transparent">
+                 SelectionMode="Multiple, Toggle" Grid.Row="1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="models:FileModel">
-                    <Grid ColumnDefinitions="*, 100">
+                    <Grid ColumnDefinitions="*, 100,150">
                         <TextBlock FontSize="25" Text="{Binding Name}"/>
-                        <TextBlock HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Format}" FontSize="25"/>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Text="{Binding CreationDate}" FontSize="15"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Format, TargetNullValue='-'}" FontSize="25"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid Grid.Row="1" ColumnDefinitions="*,*,*" Classes="Default">
+        <Grid Grid.Row="2" ColumnDefinitions="*,*,*" Classes="Default">
             <Button Content="Загрузить файлы" Grid.Column="0"
                     Command="{Binding SaveToDirCommand}"/>
             <Button Content="Удалить файлы" Grid.Column="1"

@@ -9,6 +9,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Selection;
 using Avalonia.Platform.Storage;
 using CrossplatformRadioApp.Models;
+using CrossplatformRadioApp.Views;
 using DynamicData;
 using MessageBox.Avalonia.Enums;
 
@@ -59,10 +60,12 @@ namespace CrossplatformRadioApp.ViewModels
                 if (await task == ButtonResult.Yes)
                     FileModel.DeleteMultipleFilesFromDatabase(SelectedFileModels, FileModels);
             },o => AnyModelsSelected);
+            BackCommand = new RelayCommand(o => Manager.Instance.MainWindow.CC.Content = new MainPage());
         }
         private FilePickerSaveOptions _saveFileDialog;
         private FilePickerOpenOptions _openFileDealog;
         public ObservableCollection<FileModel> FileModels { get; }
+        public RelayCommand BackCommand { get; }
         public RelayCommand DeleteCommand { get; }
         public RelayCommand SaveToDirCommand { get; }
         public RelayCommand AddFileToDbCommand { get; }
