@@ -42,6 +42,7 @@ namespace CrossplatformRadioApp.ViewModels
                     result.
                         Select(storageFile => storageFile.TryGetLocalPath()).
                         Where(path => !string.IsNullOrWhiteSpace(path)));
+                
                 FileModels.AddRange(addedFileModels);
             });
             SaveToDirCommand = new RelayCommand(async o =>

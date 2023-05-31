@@ -10,13 +10,11 @@ namespace CrossplatformRadioApp.Models
 {
     class FileModel
     {
-        private string _name;
+        private string _name, _format, _creationDateString;
         public string Name => _name; 
-        private string _format;
         public string? Format => _format==""? null: _format; 
         public string NameWithFormat => string.IsNullOrWhiteSpace(Format) ? Name: Name+"."+Format;
         private int _id;
-        private string _creationDateString;
         public string CreationDate => _creationDateString;
         private long _fileSize;
         public string FileSize => _fileSize.ToString();
