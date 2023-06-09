@@ -38,10 +38,11 @@ namespace CrossplatformRadioApp.ViewModels
             {
                 var result = await Manager.Instance.MainWindow.StorageProvider.
                     OpenFilePickerAsync(_openFileDealog);
+                var localPaths = result.Select(storageFile => storageFile.TryGetLocalPath());
+                //var localPaths2 = result.Select(storageFile => storageFile.Path.LocalPath);
                 var addedFileModels = FileModel.WriteMultipleFilesIntoDatabase(
-                    result.
-                        Select(storageFile => storageFile.TryGetLocalPath()).
-                        Where(path => !string.IsNullOrWhiteSpace(path)));
+                    localPaths.Where(path => !string.IsNullOrWhiteSpace(path))
+                    );
                 
                 FileModels.AddRange(addedFileModels);
             });

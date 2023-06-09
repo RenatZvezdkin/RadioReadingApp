@@ -25,7 +25,12 @@ public class Manager
     public void InitMainWindow(MainWindow window) => _mainWindow = window;
     private string _getExecutingPath => 
         GoUpByDirectory(Assembly.GetExecutingAssembly().Location, 4)+"/";
-    public string ConnectionString => File.ReadAllText(_getExecutingPath+"connectionstring.txt");
+    private string[] _settingsLines => 
+        File.ReadAllLines(_getExecutingPath + "settings.txt");
+    private string _getPropertyFromSettings(string prop) =>
+        _settingsLines.First(l => l.StartsWith(prop + ":")).Remove(0,prop.Length+1).Trim();
+    public string ConnectionString => _getPropertyFromSettings("connectionstring");
+    public string DatabaseVersion => _getPropertyFromSettings("databaseversion");
     public static Manager Instance { get; } = new();
     
 }

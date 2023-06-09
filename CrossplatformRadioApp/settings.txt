@@ -1,0 +1,4 @@
+connectionstring: database=SavedFilesByRadio;server=localhost;port=3306
+
+11.0.1-mariadb или 8.0.33-mysql
+databaseversion:
