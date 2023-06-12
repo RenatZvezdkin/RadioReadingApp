@@ -9,14 +9,40 @@
     <UserControl.DataContext>
         <viewModels:FreqControlPageViewModel/>
     </UserControl.DataContext>
-    <Grid>
+    <Grid RowDefinitions="100, *, 100">
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Центральная частота:"/>
-            <TextBox/>
+            <TextBox Text="{Binding CenterFreqText}" 
+                     Width="100" Margin="10,0,5,0"/>
+            <ComboBox SelectedIndex="{Binding CenterFreqType, Mode=TwoWay}"
+                      Width="80" Margin="0,0,0,20">
+                <ComboBoxItem>Hz</ComboBoxItem>
+                <ComboBoxItem>KHz</ComboBoxItem>
+                <ComboBoxItem>MHz</ComboBoxItem>
+                <ComboBoxItem>GHz</ComboBoxItem>
+            </ComboBox>
+            
+            <TextBlock Text="Частота приема:"/>
+            <TextBox Text="{Binding SampleRateText}" 
+                     Width="100" Margin="10,0,5,0"/>
+            <ComboBox SelectedIndex="{Binding SampleFreqType, Mode=TwoWay}"
+                      Width="80" Margin="0,0,0,20">
+                <ComboBoxItem>Hz</ComboBoxItem>
+                <ComboBoxItem>KHz</ComboBoxItem>
+                <ComboBoxItem>MHz</ComboBoxItem>
+                <ComboBoxItem>GHz</ComboBoxItem>
+            </ComboBox>
         </StackPanel>
-        <Grid ColumnDefinitions="*,*">
+        <Grid Grid.Row="1" ColumnDefinitions="*,*">
             <avalonia:AvaPlot Grid.Column="0" Name="IGraph"/>
             <avalonia:AvaPlot Grid.Column="1" Name="QGraph"/>
         </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Command="{Binding StartRecordingCommand}"
+                    Content="Начать запись"/>
+            <Button Command="{Binding StopRecordingCommand}"
+                    Content="Остановить запись"/>
+        </StackPanel>
     </Grid>
 </UserControl>

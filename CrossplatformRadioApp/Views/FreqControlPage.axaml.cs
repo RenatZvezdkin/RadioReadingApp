@@ -12,7 +12,8 @@ namespace CrossplatformRadioApp.Views;
 
 public partial class FreqControlPage : UserControl
 {
-    private RtlSdrManagedDevice Device => (DataContext as FreqControlPageViewModel).Device;
+    private RtlSdrManagedDevice Device => RealDataContext.Device;
+    public FreqControlPageViewModel RealDataContext => (DataContext as FreqControlPageViewModel);
     public FreqControlPage()
     {
         InitializeComponent();
@@ -28,13 +29,21 @@ public partial class FreqControlPage : UserControl
     {
         var deviceInfo = o as DeviceWithId;
         RtlSdrDeviceManager.Instance.OpenManagedDevice(deviceInfo.Id, "rtlsdr");
-        (DataContext as FreqControlPageViewModel).Device = RtlSdrDeviceManager.Instance["rtlsdr"];
+        RealDataContext.Device = RtlSdrDeviceManager.Instance["rtlsdr"];
         Device.TunerGainMode = TunerGainModes.AGC;
         Device.AGCMode = AGCModes.Enabled;
-        Device.MaxAsyncBufferSize = 1024*8*2;
+        uint samplesAmount = 1024 * 8;
+        Device.MaxAsyncBufferSize = samplesAmount*2;
         Device.DropSamplesOnFullBuffer = true;
-        Device.SamplesAvailable += (DataContext as FreqControlPageViewModel).SamplesReceiving;
-        Device.StartReadSamplesAsync(1024*8);
+        Device.SamplesAvailable += RealDataContext.SamplesReceiving;
+        
+        IGraph.Plot.AddSignal(RealDataContext.iData = new double[samplesAmount]);
+        RealDataContext.iPlot = IGraph;
+        QGraph.Plot.AddSignal(RealDataContext.qData = new double[samplesAmount]);
+        RealDataContext.qPlot = QGraph;
+        
+        Device.ResetDeviceBuffer();
+        Device.StartReadSamplesAsync(samplesAmount);
     }
     private void InitializeComponent()
     {

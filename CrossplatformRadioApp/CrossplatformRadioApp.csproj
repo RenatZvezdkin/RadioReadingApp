@@ -29,14 +29,10 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="NAudio" Version="2.1.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
         <PackageReference Include="RtlSdrManager" Version="0.2.1" />
-        <PackageReference Include="ScottPlot" Version="4.1.64" />
-        <PackageReference Include="ScottPlot.Avalonia" Version="4.1.64" />
+        <PackageReference Include="ScottPlot" Version="5.0.5-beta" />
+        <PackageReference Include="ScottPlot.Avalonia" Version="5.0.5-beta" />
     </ItemGroup>
 </Project>
