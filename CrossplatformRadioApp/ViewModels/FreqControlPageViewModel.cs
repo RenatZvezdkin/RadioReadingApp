@@ -11,24 +11,26 @@ namespace CrossplatformRadioApp.ViewModels;
 
 public class FreqControlPageViewModel
 {
-    public int CenterFreqType { get; set; } = 0;
-    public int SampleFreqType { get; set;} = 0;
-    private string _centerFreqText="0";
+    public int CenterFreqType { get; set; } = 2;
+    public int SampleFreqType { get; set;} = 2;
+    private string _centerFreqText="100";
     public string CenterFreqText
     {
         get =>_centerFreqText; 
         set
         {
             _centerFreqText = value;
+            UpdateButtons();
         }
     }
-    private string _sampleRateText="0";
+    private string _sampleRateText="1";
     public string SampleRateText
     {
         get => _sampleRateText; 
         set
         {
             _sampleRateText = value;
+            UpdateButtons();
         }
     }
     private string _fileName="New Record";
@@ -49,16 +51,27 @@ public class FreqControlPageViewModel
     public double[] iData, qData;
     public RtlSdrManagedDevice Device;
     public Record CurrentRecord;
+    private MyDbContext db;
+    public uint SamplesAmount = 1024 * 8;
     public FreqControlPageViewModel()
     {
         StartRecordingCommand = new RelayCommand(o =>
         {
-            
+            InRecording = true;
+            UpdateButtons();
+            CurrentRecord = new Record { FileName = FileName, DateOfRecord = DateTime.Now };
+            db = new MyDbContext();
+            db.Add(CurrentRecord);
+            Device.StartReadSamplesAsync(SamplesAmount);
         }, CheckFreqConditions);
         StopRecordingCommand = new RelayCommand(o =>
         {
             InRecording = false;
             UpdateButtons();
+            Device.StopReadSamplesAsync();
+            Device.ResetDeviceBuffer();
+            db.Dispose();
+            db = null;
         }, o => InRecording);
     }
     public void SamplesReceiving(object? sender, SamplesAvailableEventArgs args)
@@ -67,36 +80,34 @@ public class FreqControlPageViewModel
             return;
         
         int i = 0;
-        using var db = new MyDbContext();
         foreach (var iqData in Device.GetSamplesFromAsyncBuffer(args.SampleCount))
         {
-            db.RecordedIQData.Add(new Recordediqdatum
+            CurrentRecord.Recordediqdata.Add(
+                new Recordediqdatum
             {
                 DatetimeOfRecord = DateTime.Now, 
                 I = iqData.I, 
-                Q = iqData.Q, 
-                Record = CurrentRecord
+                Q = iqData.Q
             });
-            iData[i] = iqData.I;
-            qData[i++] = iqData.Q;
+            /*iData[i] = iqData.I;
+            qData[i++] = iqData.Q;*/
         }
         db.SaveChanges();
-        db.Dispose();
-        if (iPlot!=null)
+        /*if (iPlot!=null)
         {
             iPlot.Refresh();
         }
         if (qPlot!=null)
         {
             qPlot.Refresh();
-        }
+        }*/
     }
 
     public bool CheckFreqConditions(object o)
     {
         {
             if (InRecording || !(int.TryParse(_centerFreqText, out int CenterFreq) &&
-                                 int.TryParse(_sampleRateText, out int SampRate)))
+                                 int.TryParse(_sampleRateText, out int SampRate)) || Device==null)
             {
                 return false;
             }
@@ -183,7 +194,7 @@ public class FreqControlPageViewModel
             return !centerFreqFlag || !(sampFreq.Hz is < 225001U or > 300000U && sampFreq.Hz is < 900001U or > 3200000U);
         }
     }
-    void UpdateButtons()
+    public void UpdateButtons()
     {
         StartRecordingCommand.RaiseCanExecuteChanged();
         StopRecordingCommand.RaiseCanExecuteChanged();

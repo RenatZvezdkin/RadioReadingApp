@@ -14,8 +14,9 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Центральная частота:"/>
             <TextBox Text="{Binding CenterFreqText}" 
-                     Width="100" Margin="10,0,5,0"/>
-            <ComboBox SelectedIndex="{Binding CenterFreqType, Mode=TwoWay}"
+                     Width="100" Margin="10,0,5,0"
+                     TextChanged="TextBox_OnTextChanged"/>
+            <ComboBox SelectionChanged="SelectingItemsControl_OnSelectionChanged" SelectedIndex="{Binding CenterFreqType, Mode=TwoWay}"
                       Width="80" Margin="0,0,0,20">
                 <ComboBoxItem>Hz</ComboBoxItem>
                 <ComboBoxItem>KHz</ComboBoxItem>
@@ -25,24 +26,27 @@
             
             <TextBlock Text="Частота приема:"/>
             <TextBox Text="{Binding SampleRateText}" 
-                     Width="100" Margin="10,0,5,0"/>
-            <ComboBox SelectedIndex="{Binding SampleFreqType, Mode=TwoWay}"
-                      Width="80" Margin="0,0,0,20">
+                     TextChanged="TextBox_OnTextChanged" Width="100" Margin="10,0,5,0"/>
+            <ComboBox SelectionChanged="SelectingItemsControl_OnSelectionChanged" SelectedIndex="{Binding SampleFreqType, Mode=TwoWay}"
+                       Width="80" Margin="0,0,0,20">
                 <ComboBoxItem>Hz</ComboBoxItem>
                 <ComboBoxItem>KHz</ComboBoxItem>
                 <ComboBoxItem>MHz</ComboBoxItem>
                 <ComboBoxItem>GHz</ComboBoxItem>
             </ComboBox>
+            <TextBlock Text="Имя файла:"/>
+            <TextBox Text="{Binding FileName}" 
+                     Width="100" Margin="10,0,5,0"/>
         </StackPanel>
-        <Grid Grid.Row="1" ColumnDefinitions="*,*">
+        <!--<Grid Grid.Row="1" ColumnDefinitions="*,*">
             <avalonia:AvaPlot Grid.Column="0" Name="IGraph"/>
             <avalonia:AvaPlot Grid.Column="1" Name="QGraph"/>
-        </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        </Grid>-->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*">
             <Button Command="{Binding StartRecordingCommand}"
                     Content="Начать запись"/>
-            <Button Command="{Binding StopRecordingCommand}"
+            <Button Grid.Column="1" Command="{Binding StopRecordingCommand}"
                     Content="Остановить запись"/>
-        </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

@@ -17,6 +17,8 @@ public partial class FreqControlPage : UserControl
     public FreqControlPage()
     {
         InitializeComponent();
+        //IGraph = new ();
+        //QGraph = new();
         var cbmb = new ComboboxMessageBox(
             RtlSdrDeviceManager.Instance.Devices.Select(pair => new DeviceWithId(pair.Key, pair.Value)).ToList(),
             "DeviceName",
@@ -32,22 +34,31 @@ public partial class FreqControlPage : UserControl
         RealDataContext.Device = RtlSdrDeviceManager.Instance["rtlsdr"];
         Device.TunerGainMode = TunerGainModes.AGC;
         Device.AGCMode = AGCModes.Enabled;
-        uint samplesAmount = 1024 * 8;
-        Device.MaxAsyncBufferSize = samplesAmount*2;
+        Device.MaxAsyncBufferSize = RealDataContext.SamplesAmount;
         Device.DropSamplesOnFullBuffer = true;
         Device.SamplesAvailable += RealDataContext.SamplesReceiving;
         
-        IGraph.Plot.Add.Signal(RealDataContext.iData = new double[samplesAmount]);
+        /*IGraph.Plot.Add.Signal(RealDataContext.iData = new double[samplesAmount]);
         RealDataContext.iPlot = IGraph;
         QGraph.Plot.Add.Signal(RealDataContext.qData = new double[samplesAmount]);
-        RealDataContext.qPlot = QGraph;
+        RealDataContext.qPlot = QGraph;*/
         
         Device.ResetDeviceBuffer();
-        Device.StartReadSamplesAsync(samplesAmount);
+        RealDataContext.UpdateButtons();
     }
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+    }
+
+    private void SelectingItemsControl_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        RealDataContext.UpdateButtons();
+    }
+
+    private void TextBox_OnTextChanged(object? sender, TextChangedEventArgs e)
+    {
+        RealDataContext.UpdateButtons();
     }
 }
 
