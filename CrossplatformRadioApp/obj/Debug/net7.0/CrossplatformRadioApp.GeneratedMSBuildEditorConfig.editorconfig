@@ -18,6 +18,9 @@ build_property.ProjectDir = C:\Users\Ренатзве Здкин\Desktop\ллл\
 [C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/ComboboxMessageBox.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Ренатзве Здкин/Desktop/ллл/CrossplatformRadioApp/CrossplatformRadioApp/Views/FilesPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

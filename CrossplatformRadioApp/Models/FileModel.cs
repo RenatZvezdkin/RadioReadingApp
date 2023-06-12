@@ -4,7 +4,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using CrossplatformRadioApp.Context;
-using CrossplatformRadioApp.Entities;
+using CrossplatformRadioApp.MainDatabase;
+using JetBrains.Annotations;
 
 namespace CrossplatformRadioApp.Models
 {
@@ -110,7 +111,7 @@ namespace CrossplatformRadioApp.Models
             {
                 database.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception ignored)
             {
                 result = null;
             }

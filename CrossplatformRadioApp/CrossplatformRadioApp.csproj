@@ -23,7 +23,6 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-rc1.1" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-rc1.1" />
-        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
         <PackageReference Include="MessageBox.Avalonia" Version="2.3.1-rc1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
@@ -36,5 +35,8 @@
         </PackageReference>
         <PackageReference Include="NAudio" Version="2.1.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+        <PackageReference Include="RtlSdrManager" Version="0.2.1" />
+        <PackageReference Include="ScottPlot" Version="4.1.64" />
+        <PackageReference Include="ScottPlot.Avalonia" Version="4.1.64" />
     </ItemGroup>
 </Project>

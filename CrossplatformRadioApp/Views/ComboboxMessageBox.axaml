@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:CrossplatformRadioApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="200"
+        x:Class="CrossplatformRadioApp.Views.ComboboxMessageBox"
+        Title="ComboboxMessageBox"
+        CanResize="False">
+    <StackPanel Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock 
+            Text="{Binding Message}" 
+            Name="MessageTb" Margin="10"/>
+        <ComboBox 
+            SelectionChanged="ElementsCb_OnSelectionChanged"
+            ItemsSource="{Binding ComboboxCollection}"
+            Name="ElementsCb" Margin="10"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+            SelectedIndex="0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DeviceName }"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Выбрать" Height="35" Margin="10"
+                Command="{Binding SelectButtonCommand}"/>
+    </StackPanel>
+</Window>

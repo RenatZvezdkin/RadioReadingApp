@@ -2,7 +2,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avalonia="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+             xmlns:viewModels="clr-namespace:CrossplatformRadioApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CrossplatformRadioApp.Views.FreqControlPage">
-    Пока что не готово
+    <UserControl.DataContext>
+        <viewModels:FreqControlPageViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Центральная частота:"/>
+            <TextBox/>
+        </StackPanel>
+        <Grid ColumnDefinitions="*,*">
+            <avalonia:AvaPlot Grid.Column="0" Name="IGraph"/>
+            <avalonia:AvaPlot Grid.Column="1" Name="QGraph"/>
+        </Grid>
+    </Grid>
 </UserControl>
