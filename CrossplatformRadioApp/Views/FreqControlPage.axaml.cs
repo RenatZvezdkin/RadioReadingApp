@@ -37,9 +37,9 @@ public partial class FreqControlPage : UserControl
         Device.DropSamplesOnFullBuffer = true;
         Device.SamplesAvailable += RealDataContext.SamplesReceiving;
         
-        IGraph.Plot.AddSignal(RealDataContext.iData = new double[samplesAmount]);
+        IGraph.Plot.Add.Signal(RealDataContext.iData = new double[samplesAmount]);
         RealDataContext.iPlot = IGraph;
-        QGraph.Plot.AddSignal(RealDataContext.qData = new double[samplesAmount]);
+        QGraph.Plot.Add.Signal(RealDataContext.qData = new double[samplesAmount]);
         RealDataContext.qPlot = QGraph;
         
         Device.ResetDeviceBuffer();

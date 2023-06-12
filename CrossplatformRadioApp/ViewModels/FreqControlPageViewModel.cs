@@ -84,11 +84,11 @@ public class FreqControlPageViewModel
         db.Dispose();
         if (iPlot!=null)
         {
-            iPlot.RefreshRequest();
+            iPlot.Refresh();
         }
         if (qPlot!=null)
         {
-            qPlot.RefreshRequest();
+            qPlot.Refresh();
         }
     }
 
