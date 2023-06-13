@@ -17,7 +17,7 @@ public class Manager
         set
         {
             _selectedPage = value;
-            _mainWindow.CC.Content = value;
+            _mainWindow.MainContentControl.Content = value;
         }
     }
     public string GoUpByDirectory(string path, int foldersToGoUp = 1)

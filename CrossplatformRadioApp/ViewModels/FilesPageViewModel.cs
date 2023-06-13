@@ -62,7 +62,11 @@ namespace CrossplatformRadioApp.ViewModels
                 if (await task == ButtonResult.Yes)
                     FileModel.DeleteMultipleFilesFromDatabase(SelectedFileModels, FileModels);
             },o => AnyModelsSelected);
-            BackCommand = new RelayCommand(o => Manager.Instance.MainWindow.CC.Content = new MainPage());
+            BackCommand = new RelayCommand(o =>
+            {
+                Manager.Instance.SelectedPage = new MainPage();
+                RtlSdrManager.RtlSdrDeviceManager.Instance.CloseAllManagedDevice();
+            });
         }
         private FilePickerSaveOptions _saveFileDialog;
         private FilePickerOpenOptions _openFileDealog;

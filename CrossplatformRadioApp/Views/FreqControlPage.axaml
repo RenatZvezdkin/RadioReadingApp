@@ -10,8 +10,9 @@
         <viewModels:FreqControlPageViewModel/>
     </UserControl.DataContext>
     <Grid RowDefinitions="100, *, 100">
-        
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Button Content="Обратно" Width="100" HorizontalAlignment="Left"
+                    Margin="5,0,20,0" Command="{Binding BackCommand}"/>
             <TextBlock Text="Центральная частота:"/>
             <TextBox Text="{Binding CenterFreqText}" 
                      Width="100" Margin="10,0,5,0"
@@ -24,7 +25,7 @@
                 <ComboBoxItem>GHz</ComboBoxItem>
             </ComboBox>
             
-            <TextBlock Text="Частота приема:"/>
+            <TextBlock Text="Частота приема:" Margin="20,0,5,0"/>
             <TextBox Text="{Binding SampleRateText}" 
                      TextChanged="TextBox_OnTextChanged" Width="100" Margin="10,0,5,0"/>
             <ComboBox SelectionChanged="SelectingItemsControl_OnSelectionChanged" SelectedIndex="{Binding SampleFreqType, Mode=TwoWay}"
@@ -34,7 +35,8 @@
                 <ComboBoxItem>MHz</ComboBoxItem>
                 <ComboBoxItem>GHz</ComboBoxItem>
             </ComboBox>
-            <TextBlock Text="Имя файла:"/>
+            
+            <TextBlock Text="Имя файла:" Margin="20,0,5,0"/>
             <TextBox Text="{Binding FileName}" 
                      Width="100" Margin="10,0,5,0"/>
         </StackPanel>

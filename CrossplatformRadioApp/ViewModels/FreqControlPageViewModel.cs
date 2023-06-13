@@ -3,6 +3,7 @@ using Avalonia;
 using CrossplatformRadioApp.Context;
 using CrossplatformRadioApp.MainDatabase;
 using CrossplatformRadioApp.Models;
+using CrossplatformRadioApp.Views;
 using RtlSdrManager;
 using RtlSdrManager.Types;
 using ScottPlot.Avalonia;
@@ -46,6 +47,7 @@ public class FreqControlPageViewModel
     public bool InRecording { get; set; } 
     public RelayCommand StartRecordingCommand { get; }
     public RelayCommand StopRecordingCommand { get; }
+    public RelayCommand BackCommand { get; }
     public AvaPlot iPlot { get; set; }
     public AvaPlot qPlot { get; set; }
     public double[] iData, qData;
@@ -55,6 +57,7 @@ public class FreqControlPageViewModel
     public uint SamplesAmount = 1024 * 8;
     public FreqControlPageViewModel()
     {
+        BackCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new MainPage());
         StartRecordingCommand = new RelayCommand(o =>
         {
             InRecording = true;

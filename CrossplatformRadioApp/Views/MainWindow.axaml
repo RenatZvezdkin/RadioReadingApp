@@ -15,8 +15,6 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid>
-        <ContentControl Name="CC" Background="#EE282828"/>
-    </Grid>
+    <ContentControl Name="MainContentControl" Background="#EE282828"/>
 
 </Window>
