@@ -29,13 +29,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid Grid.Row="2" ColumnDefinitions="*,*,*" Classes="Default">
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Classes="Default">
             <Button Content="Загрузить файлы" Grid.Column="0"
                     Command="{Binding SaveToDirCommand}"/>
             <Button Content="Удалить файлы" Grid.Column="1"
                     Command="{Binding DeleteCommand}"/>
-            <Button Content="Добавить файлы" Grid.Column="2"
-                    Command="{Binding AddFileToDbCommand}"/>
+            <!--<Button Content="Добавить файлы" Grid.Column="2"
+                    Command="{Binding AddFileToDbCommand}"/>-->
         </Grid>
     </Grid>
 </UserControl>

@@ -118,7 +118,7 @@ namespace CrossplatformRadioApp.Models
             return result;
         }
 
-        private static SavedFile _GetFileAsDBEntry(string filepath)
+        public static SavedFile _GetFileAsDBEntry(string filepath)
         {
             var newFile = new SavedFile
             {
