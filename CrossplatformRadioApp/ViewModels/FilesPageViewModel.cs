@@ -65,7 +65,7 @@ namespace CrossplatformRadioApp.ViewModels
             BackCommand = new RelayCommand(o =>
             {
                 Manager.Instance.SelectedPage = new MainPage();
-                RtlSdrManager.RtlSdrDeviceManager.Instance.CloseAllManagedDevice();
+                //RtlSdrManager.RtlSdrDeviceManager.Instance.CloseAllManagedDevice();
             });
         }
         private FilePickerSaveOptions _saveFileDialog;

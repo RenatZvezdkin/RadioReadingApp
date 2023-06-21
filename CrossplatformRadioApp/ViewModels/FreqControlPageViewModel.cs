@@ -65,6 +65,7 @@ public class FreqControlPageViewModel
             CurrentRecord = new Record { FileName = FileName, DateOfRecord = DateTime.Now };
             db = new MyDbContext();
             db.Add(CurrentRecord);
+            db.SaveChanges();
             Device.StartReadSamplesAsync(SamplesAmount);
         }, CheckFreqConditions);
         StopRecordingCommand = new RelayCommand(o =>
@@ -72,7 +73,8 @@ public class FreqControlPageViewModel
             InRecording = false;
             UpdateButtons();
             Device.StopReadSamplesAsync();
-            Device.ResetDeviceBuffer();
+            //Device.ResetDeviceBuffer();
+            db.SaveChanges();
             db.Dispose();
             db = null;
         }, o => InRecording);
@@ -85,13 +87,21 @@ public class FreqControlPageViewModel
         int i = 0;
         foreach (var iqData in Device.GetSamplesFromAsyncBuffer(args.SampleCount))
         {
-            CurrentRecord.Recordediqdata.Add(
+            db.RecordedIQData.Add(
+                new Recordediqdatum
+            {
+                DatetimeOfRecord = DateTime.Now, 
+                I = iqData.I, 
+                Q = iqData.Q,
+                RecordId = CurrentRecord.Id
+            });
+            /*CurrentRecord.Recordediqdata.Add(
                 new Recordediqdatum
             {
                 DatetimeOfRecord = DateTime.Now, 
                 I = iqData.I, 
                 Q = iqData.Q
-            });
+            });*/
             /*iData[i] = iqData.I;
             qData[i++] = iqData.Q;*/
         }
