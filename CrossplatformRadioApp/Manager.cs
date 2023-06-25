@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -41,13 +42,6 @@ public class Manager
     /// <returns></returns>
     public string GoUpByDirectory(string path, int foldersToGoUp = 1)
         => foldersToGoUp<=1? Directory.GetParent(path).ToString() : GoUpByDirectory(Directory.GetParent(path).ToString(),foldersToGoUp-1);
-    private string _getExecutingPath => 
-        GoUpByDirectory(Assembly.GetExecutingAssembly().Location, 4)+"/";
-    private string[] _settingsLines => 
-        File.ReadAllLines(_getExecutingPath + "settings.txt");
-    private string _getPropertyFromSettings(string prop) =>
-        _settingsLines.First(l => l.StartsWith(prop + ":")).Remove(0,prop.Length+1).Trim();
-
     /// <summary>
     /// возвращает строку подключения к базе данных MariaDB/MySQL
     /// </summary>
@@ -74,6 +68,23 @@ public class Manager
                 return false;
             using var db = new MyDbContext();
             return db.Database.CanConnect();
+        }
+    }
+
+    public bool SDRsArePresent
+    {
+        get
+        {
+            bool res = true;
+            try
+            {
+                var devices = RtlSdrManager.RtlSdrDeviceManager.Instance.Devices;
+            }
+            catch (Exception ignored)
+            {
+                res = false;
+            }
+            return res;
         }
     }
     private Manager()

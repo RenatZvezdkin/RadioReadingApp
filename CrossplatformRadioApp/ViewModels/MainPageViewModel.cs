@@ -9,7 +9,16 @@ public class MainPageViewModel: ViewModelBase
     public RelayCommand MoveToFreqControlCommand { get; }
     public MainPageViewModel()
     {
-        MoveToSavedFilesCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new FilesPage(), o=> Manager.Instance.ConnectedToDatabase);
-        MoveToFreqControlCommand = new RelayCommand(o => Manager.Instance.SelectedPage = new FreqControlPage(), o=> Manager.Instance.ConnectedToDatabase);
+        MoveToSavedFilesCommand = new RelayCommand(
+            o => Manager.Instance.SelectedPage = new FilesPage(), 
+            o=> Manager.Instance.ConnectedToDatabase);
+        MoveToFreqControlCommand = new RelayCommand(
+            o => Manager.Instance.SelectedPage = new FreqControlPage(), 
+            o=> Manager.Instance.ConnectedToDatabase && Manager.Instance.SDRsArePresent);
+    }
+    public void RaiseCommandUpdates()
+    {
+        MoveToSavedFilesCommand.RaiseCanExecuteChanged();
+        MoveToFreqControlCommand.RaiseCanExecuteChanged();
     }
 }

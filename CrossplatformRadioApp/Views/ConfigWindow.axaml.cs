@@ -22,5 +22,7 @@ public partial class ConfigWindow : Window
     {
         if (!Manager.Instance.ConnectedToDatabase)
             Manager.Instance.MainWindow.Close();
+        else
+            ((Manager.Instance.MainWindow.MainContentControl.Content as MainPage)?.DataContext as MainPageViewModel)?.RaiseCommandUpdates();
     }
 }

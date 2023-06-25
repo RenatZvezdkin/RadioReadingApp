@@ -16,13 +16,17 @@
     <StackPanel Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center"
                 Orientation="Vertical">
         <TextBlock TextAlignment="Center" FontSize="20" TextWrapping="Wrap" 
-                   Text="Введите строку подключения к базе данных" Margin="10"/>
-        <TextBox Width="450" FontSize="16" 
+                   Text="Введите строку подключения к серверу СУБД" Margin="10"/>
+        <TextBox FontSize="16" Margin="10,0"
                  Text="{Binding ConnString, Mode=TwoWay}"/>
-        <ComboBox Margin="10" 
+        <ComboBox Margin="10" FontSize="16"
                   SelectedItem="{Binding SelectedDatabase}" 
                   ItemsSource="{Binding DatabasesComboboxItems}"/>
-        <Button Content="Попробовать войти" Command="{Binding ScaryCommandToCheckDatabase}"/>
+        <TextBlock TextAlignment="Center" FontSize="20" TextWrapping="Wrap" 
+                   Text="Введите название для созданой базы данных" Margin="10, 0"/>
+        <TextBox FontSize="16" Margin="10" TextAlignment="Center"
+                 Text="{Binding DatabaseName, Mode=TwoWay}"/>
+        <Button Margin="10, 0" Content="Попробовать войти" Command="{Binding ScaryCommandToCheckDatabase}"/>
         
     </StackPanel>
 </Window>
