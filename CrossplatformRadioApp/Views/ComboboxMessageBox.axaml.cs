@@ -8,7 +8,7 @@ using CrossplatformRadioApp.Models;
 
 namespace CrossplatformRadioApp.Views;
 /// <summary>
-/// Класс-окно, для показа окна выбора одного элемента из представленных
+/// Окно, для показа окна выбора одного элемента из представленных
 /// </summary>
 public partial class ComboboxMessageBox : Window
 {

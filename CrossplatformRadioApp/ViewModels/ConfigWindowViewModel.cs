@@ -1,38 +1,25 @@
 using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Avalonia;
 using Avalonia.Platform;
 using CrossplatformRadioApp.Models;
 using CrossplatformRadioApp.Views;
-using MessageBox.Avalonia.Enums;
 using MySqlConnector;
 
 namespace CrossplatformRadioApp.ViewModels;
 
-public class ConfigWindowViewModel : INotifyPropertyChanged
+public class ConfigWindowViewModel : ViewModelBase
 {
     public string ConnString { get; set; }
     public string DatabaseName { get; set; }
     public ObservableCollection<string> DatabasesComboboxItems { get; }
-    private string _selectedDatabase;
     public RelayCommand ScaryCommandToCheckDatabase{ get; }
     public ConfigWindow Window;
-    public string SelectedDatabase
-    {
-        get => _selectedDatabase;
-        set
-        {
-            _selectedDatabase = value;
-        }
-    }
-    
+    public string SelectedDatabase { get; set; }
+
     public ConfigWindowViewModel()
     {
         ConnString = "";
@@ -52,6 +39,10 @@ public class ConfigWindowViewModel : INotifyPropertyChanged
                     Manager.Instance.Settings.AddProperty("connectionstring", $"database={DatabaseName};{ConnString}");
                     Manager.Instance.Settings.AddProperty("databaseversion", con.ServerVersion+"-"+SelectedDatabase);
                     command.ExecuteNonQuery();
+                    if (!Manager.Instance.SDRsArePresent)
+                        MessageBox.Avalonia.MessageBoxManager.
+                        GetMessageBoxStandardWindow("RtlSdrLib", "В проекте отсутствует RtlSdrLib.dll и его зависимости. Пока они не будут добавлены функция записи частот не будет доступна. Скачать их вы можете на \"ftp.osmocom.org\"").
+                        Show(Window);
                     Window.Close();
                 }
             }
@@ -64,11 +55,5 @@ public class ConfigWindowViewModel : INotifyPropertyChanged
         });
         SelectedDatabase = DatabasesComboboxItems.First();
         ConnString = "server=localhost; port=3306; user=root?; password=123456?";
-    }
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

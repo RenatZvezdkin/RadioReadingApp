@@ -7,7 +7,9 @@ using RtlSdrManager.Types;
 
 
 namespace CrossplatformRadioApp.Views;
-
+/// <summary>
+/// Страница, для управления частотами
+/// </summary>
 public partial class FreqControlPage : UserControl
 {
     private RtlSdrManagedDevice Device => RealDataContext.Device;

@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using Avalonia.Controls;
 using CrossplatformRadioApp.Context;
@@ -10,8 +9,11 @@ namespace CrossplatformRadioApp;
 
 public class Manager
 {
-    private SettingsFile _settings;
-    public SettingsFile Settings => _settings;
+    /// <summary>
+    /// Отражает зашифрованный файл для настроек
+    /// </summary>
+    public ISettingsFile Settings { get; }
+
     private UserControl _selectedPage;
     /// <summary>
     /// Основное окно, на котором должно происходить основное действие
@@ -23,7 +25,7 @@ public class Manager
     /// <param name="window">основное окно</param>
     public void InitMainWindow(MainWindow window) => MainWindow = window;
     /// <summary>
-    /// Выбранная страница основного окна, при присваивании переносит основное окно на эту страницу
+    /// Выбранная страница основного окна. При присваивании переносит основное окно на эту страницу
     /// </summary>
     public UserControl SelectedPage
     {
@@ -43,19 +45,19 @@ public class Manager
     public string GoUpByDirectory(string path, int foldersToGoUp = 1)
         => foldersToGoUp<=1? Directory.GetParent(path).ToString() : GoUpByDirectory(Directory.GetParent(path).ToString(),foldersToGoUp-1);
     /// <summary>
-    /// возвращает строку подключения к базе данных MariaDB/MySQL
+    /// Строка подключения к базе данных MariaDB/MySQL
     /// </summary>
     public string? ConnectionString =>
-        _settings.GetValueFromProperty("connectionstring");
+        Settings.GetValueFromProperty("connectionstring");
     //_getPropertyFromSettings("connectionstring");
     /// <summary>
-    /// возвращает версию базы данных из файла настроек
+    /// Версия базы данных из файла настроек
     /// </summary>
     public string? DatabaseVersion =>
-        _settings.GetValueFromProperty("databaseversion");
+        Settings.GetValueFromProperty("databaseversion");
     //_getPropertyFromSettings("databaseversion");
     /// <summary>
-    /// возвращает ссылку на значение Manager
+    /// Ссылка на единственное значение Manager
     /// </summary>
     public static Manager Instance { get; } = new();
     /// <summary>
@@ -70,25 +72,21 @@ public class Manager
             return db.Database.CanConnect();
         }
     }
-
+    /// <summary>
+    /// true, если в папке с исполнительным файлом имеется RtlSdrLib (Ссылка на скачивание <a href="https://ftp.osmocom.org/binaries/windows/rtl-sdr/">тут</a>) и количество устройств выше 0, иначе false
+    /// </summary>
     public bool SDRsArePresent
     {
         get
         {
-            bool res = true;
-            try
-            {
-                var devices = RtlSdrManager.RtlSdrDeviceManager.Instance.Devices;
-            }
-            catch (Exception ignored)
-            {
-                res = false;
-            }
+            var res = true;
+            try{ var devices = RtlSdrManager.RtlSdrDeviceManager.Instance.Devices; }
+            catch (Exception ignored) { res = false; }
             return res;
         }
     }
     private Manager()
     {
-        _settings = new SettingsFile(GoUpByDirectory(Assembly.GetExecutingAssembly().Location));
+        Settings = new SettingsFile(GoUpByDirectory(Assembly.GetExecutingAssembly().Location));
     }
 }

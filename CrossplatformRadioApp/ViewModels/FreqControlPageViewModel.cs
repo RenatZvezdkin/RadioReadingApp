@@ -9,7 +9,7 @@ using ScottPlot.Avalonia;
 
 namespace CrossplatformRadioApp.ViewModels;
 
-public class FreqControlPageViewModel
+public class FreqControlPageViewModel: ViewModelBase
 {
     public int CenterFreqType { get; set; } = 2;
     public int SampleFreqType { get; set;} = 2;
@@ -114,7 +114,11 @@ public class FreqControlPageViewModel
             qPlot.Refresh();
         }*/
     }
-
+    /// <summary>
+    /// Проверяет поддержку библиотекой выбранных пользователем частот
+    /// </summary>
+    /// <param name="o">кнопка, к которой принадлежит команда с этим условием (Игнорируется)</param>
+    /// <returns>true, все частоты поддерживаются библиотекой RtlSdrManager, иначе false</returns>
     public bool CheckFreqConditions(object o)
     {
         {

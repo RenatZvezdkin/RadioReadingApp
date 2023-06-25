@@ -28,8 +28,7 @@ class FileModel
     /// <summary>
     /// Айди оригинатора файла из базы данных
     /// </summary>
-    public int Id => _id;
-    private int _id;
+    public int Id { get; }
     /// <summary>
     /// Показательная дата создания файла
     /// </summary>
@@ -40,7 +39,7 @@ class FileModel
     /// <param name="databaseEntry">запись из базы данных для файла</param>
     public FileModel(SavedFile databaseEntry)
     {
-        _id = databaseEntry.Id;
+        Id = databaseEntry.Id;
         _name = databaseEntry.FileName;
         _format = databaseEntry.Format;
         _creationDateString = databaseEntry.DateOfSaving.ToLocalTime().ToShortDateString() +" "+
@@ -63,7 +62,7 @@ class FileModel
 
         using var database = new MyDbContext();
         using var fileStream = File.Create(filepath);
-        var fileBytes = database.SavedFiles.Find(_id)?.ByteCode;
+        var fileBytes = database.SavedFiles.Find(Id)?.ByteCode;
         fileStream.Write(fileBytes, 0, fileBytes.Length);
         fileStream.Flush();
     }
@@ -77,7 +76,7 @@ class FileModel
         bool deleted = true;
         using (var database = new MyDbContext())
         {
-            var databaseEntry = database.SavedFiles.Find(_id);
+            var databaseEntry = database.SavedFiles.Find(Id);
             try
             {
                 database.SavedFiles.Remove(databaseEntry);

@@ -6,6 +6,9 @@ namespace CrossplatformRadioApp.Views;
 
 public partial class MainPage : UserControl
 {
+    /// <summary>
+    /// Главная страница, приветствующая пользователя при входе в программу
+    /// </summary>
     public MainPage()
     {
         InitializeComponent();

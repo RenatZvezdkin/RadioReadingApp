@@ -20,6 +20,9 @@ public class RelayCommand: ICommand
         _execute = execute ?? throw new ArgumentNullException(nameof(execute));
         _canExecute = canExecute;
     }
+    /// <summary>
+    /// Обработчик событий, отвечающий за доступность команды при соблюдении условий
+    /// </summary>
     public event EventHandler CanExecuteChanged;
     /// <summary>
     /// Проверяет условия для разрешения пользования кнопкой

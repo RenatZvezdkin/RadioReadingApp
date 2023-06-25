@@ -5,6 +5,9 @@ using CrossplatformRadioApp.ViewModels;
 
 namespace CrossplatformRadioApp.Views;
 
+/// <summary>
+/// Страница, показывающаяся при первом открытии программы и при отсутствии установленных настроек в программе
+/// </summary>
 public partial class ConfigWindow : Window
 {
     public ConfigWindow()
