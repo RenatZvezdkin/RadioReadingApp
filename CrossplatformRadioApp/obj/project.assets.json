@@ -2,11 +2,11 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Avalonia/11.0.0-preview8": {
+      "Avalonia/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia.BuildServices": "0.0.12",
-          "Avalonia.Remote.Protocol": "11.0.0-preview8",
+          "Avalonia.BuildServices": "0.0.19",
+          "Avalonia.Remote.Protocol": "11.0.0-rc1.1",
           "MicroCom.Runtime": "0.11.0",
           "System.ComponentModel.Annotations": "4.5.0"
         },
@@ -90,18 +90,17 @@
           }
         }
       },
-      "Avalonia.BuildServices/0.0.12": {
+      "Avalonia.BuildServices/0.0.19": {
         "type": "package",
         "build": {
-          "buildTransitive/Avalonia.BuildServices.props": {},
           "buildTransitive/Avalonia.BuildServices.targets": {}
         }
       },
-      "Avalonia.Controls.ColorPicker/11.0.0-preview8": {
+      "Avalonia.Controls.ColorPicker/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
-          "Avalonia.Remote.Protocol": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1",
+          "Avalonia.Remote.Protocol": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.Controls.ColorPicker.dll": {
@@ -114,11 +113,11 @@
           }
         }
       },
-      "Avalonia.Controls.DataGrid/11.0.0-preview8": {
+      "Avalonia.Controls.DataGrid/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
-          "Avalonia.Remote.Protocol": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1",
+          "Avalonia.Remote.Protocol": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.Controls.DataGrid.dll": {
@@ -131,14 +130,14 @@
           }
         }
       },
-      "Avalonia.Desktop/11.0.0-preview8": {
+      "Avalonia.Desktop/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
-          "Avalonia.Native": "11.0.0-preview8",
-          "Avalonia.Skia": "11.0.0-preview8",
-          "Avalonia.Win32": "11.0.0-preview8",
-          "Avalonia.X11": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1",
+          "Avalonia.Native": "11.0.0-rc1.1",
+          "Avalonia.Skia": "11.0.0-rc1.1",
+          "Avalonia.Win32": "11.0.0-rc1.1",
+          "Avalonia.X11": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.Desktop.dll": {
@@ -151,13 +150,13 @@
           }
         }
       },
-      "Avalonia.Diagnostics/11.0.0-preview8": {
+      "Avalonia.Diagnostics/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
-          "Avalonia.Controls.ColorPicker": "11.0.0-preview8",
-          "Avalonia.Controls.DataGrid": "11.0.0-preview8",
-          "Avalonia.Themes.Simple": "11.0.0-preview8",
+          "Avalonia": "11.0.0-rc1.1",
+          "Avalonia.Controls.ColorPicker": "11.0.0-rc1.1",
+          "Avalonia.Controls.DataGrid": "11.0.0-rc1.1",
+          "Avalonia.Themes.Simple": "11.0.0-rc1.1",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "3.8.0",
           "Microsoft.CodeAnalysis.Common": "3.8.0"
         },
@@ -172,10 +171,10 @@
           }
         }
       },
-      "Avalonia.FreeDesktop/11.0.0-preview8": {
+      "Avalonia.FreeDesktop/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
+          "Avalonia": "11.0.0-rc1.1",
           "Tmds.DBus.Protocol": "0.15.0"
         },
         "compile": {
@@ -189,10 +188,10 @@
           }
         }
       },
-      "Avalonia.Native/11.0.0-preview8": {
+      "Avalonia.Native/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.Native.dll": {
@@ -211,10 +210,10 @@
           }
         }
       },
-      "Avalonia.ReactiveUI/11.0.0-preview8": {
+      "Avalonia.ReactiveUI/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
+          "Avalonia": "11.0.0-rc1.1",
           "ReactiveUI": "18.3.1",
           "System.Reactive": "5.0.0"
         },
@@ -229,7 +228,7 @@
           }
         }
       },
-      "Avalonia.Remote.Protocol/11.0.0-preview8": {
+      "Avalonia.Remote.Protocol/11.0.0-rc1.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/Avalonia.Remote.Protocol.dll": {
@@ -242,10 +241,10 @@
           }
         }
       },
-      "Avalonia.Skia/11.0.0-preview8": {
+      "Avalonia.Skia/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
+          "Avalonia": "11.0.0-rc1.1",
           "HarfBuzzSharp": "2.8.2.3",
           "HarfBuzzSharp.NativeAssets.Linux": "2.8.2.3",
           "HarfBuzzSharp.NativeAssets.WebAssembly": "2.8.2.3",
@@ -264,10 +263,10 @@
           }
         }
       },
-      "Avalonia.Themes.Simple/11.0.0-preview8": {
+      "Avalonia.Themes.Simple/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.Themes.Simple.dll": {
@@ -280,10 +279,10 @@
           }
         }
       },
-      "Avalonia.Win32/11.0.0-preview8": {
+      "Avalonia.Win32/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
+          "Avalonia": "11.0.0-rc1.1",
           "Avalonia.Angle.Windows.Natives": "2.1.0.2023020321",
           "System.Drawing.Common": "6.0.0",
           "System.Numerics.Vectors": "4.5.0"
@@ -299,12 +298,12 @@
           }
         }
       },
-      "Avalonia.X11/11.0.0-preview8": {
+      "Avalonia.X11/11.0.0-rc1.1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview8",
-          "Avalonia.FreeDesktop": "11.0.0-preview8",
-          "Avalonia.Skia": "11.0.0-preview8"
+          "Avalonia": "11.0.0-rc1.1",
+          "Avalonia.FreeDesktop": "11.0.0-rc1.1",
+          "Avalonia.Skia": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/Avalonia.X11.dll": {
@@ -317,10 +316,10 @@
           }
         }
       },
-      "ColorTextBlock.Avalonia/11.0.0-b1": {
+      "ColorTextBlock.Avalonia/11.0.0-d1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview6"
+          "Avalonia": "11.0.0-rc1.1"
         },
         "compile": {
           "lib/net6.0/ColorTextBlock.Avalonia.dll": {}
@@ -456,11 +455,11 @@
           }
         }
       },
-      "Markdown.Avalonia.Tight/11.0.0-b1": {
+      "Markdown.Avalonia.Tight/11.0.0-d1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview6",
-          "ColorTextBlock.Avalonia": "11.0.0-b1"
+          "Avalonia": "11.0.0-rc1.1",
+          "ColorTextBlock.Avalonia": "11.0.0-d1"
         },
         "compile": {
           "lib/net6.0/Markdown.Avalonia.dll": {}
@@ -469,11 +468,11 @@
           "lib/net6.0/Markdown.Avalonia.dll": {}
         }
       },
-      "MessageBox.Avalonia/2.3.1-prev7.0": {
+      "MessageBox.Avalonia/2.3.1-rc1": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.0.0-preview7",
-          "Markdown.Avalonia.Tight": "11.0.0-b1"
+          "Avalonia": "11.0.0-rc1.1",
+          "Markdown.Avalonia.Tight": "11.0.0-d1"
         },
         "compile": {
           "lib/netstandard2.0/MessageBox.Avalonia.dll": {}
@@ -763,11 +762,11 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.5": {
+      "Microsoft.EntityFrameworkCore/7.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.8",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.8",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -786,7 +785,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -799,7 +798,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.8": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -808,11 +807,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Design/7.0.8": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.8",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -830,10 +829,10 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore": "7.0.8",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -847,10 +846,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.5": {
+      "Microsoft.EntityFrameworkCore.Tools/7.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.5"
+          "Microsoft.EntityFrameworkCore.Design": "7.0.8"
         },
         "compile": {
           "lib/net6.0/_._": {}
@@ -1049,7 +1048,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Platforms/2.1.2": {
+      "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1065,6 +1064,33 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Win32.Registry/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -1114,6 +1140,85 @@
           }
         }
       },
+      "NAudio/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NAudio.Asio": "2.1.0",
+          "NAudio.Core": "2.1.0",
+          "NAudio.Midi": "2.1.0",
+          "NAudio.Wasapi": "2.1.0",
+          "NAudio.WinMM": "2.1.0"
+        },
+        "compile": {
+          "lib/net6.0/NAudio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/NAudio.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NAudio.Asio/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "NAudio.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NAudio.Asio.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Asio.dll": {}
+        }
+      },
+      "NAudio.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NAudio.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Core.dll": {}
+        }
+      },
+      "NAudio.Midi/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NAudio.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NAudio.Midi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Midi.dll": {}
+        }
+      },
+      "NAudio.Wasapi/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NAudio.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NAudio.Wasapi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Wasapi.dll": {}
+        }
+      },
+      "NAudio.WinMM/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "NAudio.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NAudio.WinMM.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.WinMM.dll": {}
+        }
+      },
       "Pomelo.EntityFrameworkCore.MySql/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -1145,6 +1250,54 @@
         "runtime": {
           "lib/net6.0/ReactiveUI.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "RtlSdrManager/0.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/RtlSdrManager.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/RtlSdrManager.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        }
+      },
+      "ScottPlot/5.0.5-beta": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.3",
+          "System.Drawing.Primitives": "4.3.0"
+        },
+        "compile": {
+          "lib/net6.0/ScottPlot.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ScottPlot.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "ScottPlot.Avalonia/5.0.5-beta": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "0.10.19",
+          "Avalonia.Desktop": "0.10.19",
+          "ScottPlot": "5.0.5-beta"
+        },
+        "compile": {
+          "lib/net6.0/ScottPlot.Avalonia.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ScottPlot.Avalonia.dll": {
+            "related": ".pdb"
           }
         }
       },
@@ -1345,6 +1498,19 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Drawing.Primitives/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Drawing.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/System.Drawing.Primitives.dll": {}
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -1719,6 +1885,52 @@
           "ref/netcoreapp1.1/_._": {}
         }
       },
+      "System.Security.AccessControl/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1844,10 +2056,10 @@
     }
   },
   "libraries": {
-    "Avalonia/11.0.0-preview8": {
-      "sha512": "f+im85VKZ9VjKaQlvw+73UQPT7vJBape7h3B1ozDdywkc6OkU+fp577ROXc4zZprvXK876vmhU/e3NaKVLERvw==",
+    "Avalonia/11.0.0-rc1.1": {
+      "sha512": "IQ/pV0UlmZ+trXNxCzTRPjYHXrodEsa7RR4qvW2UGT22Z40jNgbefDWH0bCUAkfoBIaKzwSIp+asc6vcDtCHTA==",
       "type": "package",
-      "path": "avalonia/11.0.0-preview8",
+      "path": "avalonia/11.0.0-rc1.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1855,7 +2067,7 @@
         "Icon.png",
         "analyzers/dotnet/cs/Avalonia.Analyzers.dll",
         "analyzers/dotnet/cs/Avalonia.Generators.dll",
-        "avalonia.11.0.0-preview8.nupkg.sha512",
+        "avalonia.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.nuspec",
         "build/Avalonia.Generators.props",
         "build/Avalonia.props",
@@ -1863,6 +2075,7 @@
         "build/AvaloniaBuildTasks.props",
         "build/AvaloniaBuildTasks.targets",
         "build/AvaloniaItemSchema.xaml",
+        "build/AvaloniaPrivateApis.targets",
         "build/AvaloniaVersion.props",
         "buildTransitive/Avalonia.Generators.props",
         "buildTransitive/Avalonia.props",
@@ -1870,6 +2083,7 @@
         "buildTransitive/AvaloniaBuildTasks.props",
         "buildTransitive/AvaloniaBuildTasks.targets",
         "buildTransitive/AvaloniaItemSchema.xaml",
+        "buildTransitive/AvaloniaPrivateApis.targets",
         "lib/net461/Avalonia.Base.dll",
         "lib/net461/Avalonia.Base.xml",
         "lib/net461/Avalonia.Controls.dll",
@@ -2035,19 +2249,17 @@
         "runtimes/win-x86/native/av_libglesv2.dll"
       ]
     },
-    "Avalonia.BuildServices/0.0.12": {
-      "sha512": "UnNTQc4UUGZkF/2gEPCujel8bK+8WCXttBacS80c9UvMrFkpb210n65ex6Qjnnzdj4WWn3XFGcMdsiX17OA6Bw==",
+    "Avalonia.BuildServices/0.0.19": {
+      "sha512": "pGjCClF2mYpC4dl3eUB1Jkmb0RVAgo+CYlAXwtB8yBSNf/L6im+e7lyfLMRT6UFHjDAusqapWBQDfTa3n1SDIA==",
       "type": "package",
-      "path": "avalonia.buildservices/0.0.12",
+      "path": "avalonia.buildservices/0.0.19",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "avalonia.buildservices.0.0.12.nupkg.sha512",
+        "avalonia.buildservices.0.0.19.nupkg.sha512",
         "avalonia.buildservices.nuspec",
-        "build/Avalonia.BuildServices.props",
         "build/Avalonia.BuildServices.targets",
-        "buildTransitive/Avalonia.BuildServices.props",
         "buildTransitive/Avalonia.BuildServices.targets",
         "tools/netstandard2.0/Avalonia.BuildServices.dll",
         "tools/netstandard2.0/Microsoft.Build.Framework.dll",
@@ -2056,15 +2268,15 @@
         "tools/netstandard2.0/runtimeconfig.json"
       ]
     },
-    "Avalonia.Controls.ColorPicker/11.0.0-preview8": {
-      "sha512": "oupMeQOFOrt5cmK8YIPRUaFCS6VNBHRPgDbz9n89rqnQegavVpP6XM6LsAQjKCdh13WX2mW8qcqIQETFs4NtLw==",
+    "Avalonia.Controls.ColorPicker/11.0.0-rc1.1": {
+      "sha512": "K5+P3xnzKJRVEY+KeDmtl10Z6Jv4QB1RotFKUJ5tYE+r46gJXcibXCmwocg8gL0cVviq2LS0oa5rrJvZMUNkVg==",
       "type": "package",
-      "path": "avalonia.controls.colorpicker/11.0.0-preview8",
+      "path": "avalonia.controls.colorpicker/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.controls.colorpicker.11.0.0-preview8.nupkg.sha512",
+        "avalonia.controls.colorpicker.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.controls.colorpicker.nuspec",
         "lib/net6.0/Avalonia.Controls.ColorPicker.dll",
         "lib/net6.0/Avalonia.Controls.ColorPicker.xml",
@@ -2072,15 +2284,15 @@
         "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
       ]
     },
-    "Avalonia.Controls.DataGrid/11.0.0-preview8": {
-      "sha512": "tLb+HM5dgJwICffyiqb5ouBVPs+lFrqTxWQ/iXR7EhQmbVzRUHpl2rMcdfyBsnBQBZjoXDBQMMrYdaYngyirlQ==",
+    "Avalonia.Controls.DataGrid/11.0.0-rc1.1": {
+      "sha512": "+RNuGlBqpRHYEv7vgVp+nEdnc4QN0lh6cB5qXob2Kz+ti5EJASb+LuYunYZDecvkNDVKSQn74msd4paYZZ/JBw==",
       "type": "package",
-      "path": "avalonia.controls.datagrid/11.0.0-preview8",
+      "path": "avalonia.controls.datagrid/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.controls.datagrid.11.0.0-preview8.nupkg.sha512",
+        "avalonia.controls.datagrid.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.controls.datagrid.nuspec",
         "lib/net6.0/Avalonia.Controls.DataGrid.dll",
         "lib/net6.0/Avalonia.Controls.DataGrid.xml",
@@ -2088,15 +2300,15 @@
         "lib/netstandard2.0/Avalonia.Controls.DataGrid.xml"
       ]
     },
-    "Avalonia.Desktop/11.0.0-preview8": {
-      "sha512": "iH/bgtem+UbCqmFyIlH+80UHDlRTsITsLEOZ9skO+dMltbhcIvuIKkVuELi0rpC5dLpUtrU8cM6DE0xyFHMXTQ==",
+    "Avalonia.Desktop/11.0.0-rc1.1": {
+      "sha512": "E/Nli9MFPOxhxsjqfxs9B4Fdt3qNN/z5om7mgHkYRitWtUNnY5PDIsWKHeltwOhNL8+Xrxnh+i0WQjsm9iizJQ==",
       "type": "package",
-      "path": "avalonia.desktop/11.0.0-preview8",
+      "path": "avalonia.desktop/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.desktop.11.0.0-preview8.nupkg.sha512",
+        "avalonia.desktop.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.desktop.nuspec",
         "lib/net6.0/Avalonia.Desktop.dll",
         "lib/net6.0/Avalonia.Desktop.xml",
@@ -2104,15 +2316,15 @@
         "lib/netstandard2.0/Avalonia.Desktop.xml"
       ]
     },
-    "Avalonia.Diagnostics/11.0.0-preview8": {
-      "sha512": "3L1zrdsWdvgTQbLxEVEdGtO+sIHwdpanZXXTnhv81H6l6k2fqiR/yZFICC2iH28Y1IE3e6hWCPGfPwIX5grk0A==",
+    "Avalonia.Diagnostics/11.0.0-rc1.1": {
+      "sha512": "EmeYtZrbN7mvX2Y+9ezTWogph8LLO3vF5bZqcTq0RKYxc33vzSrklve+GSQdrq40ZMHyljul2fwknbz4bJjjyQ==",
       "type": "package",
-      "path": "avalonia.diagnostics/11.0.0-preview8",
+      "path": "avalonia.diagnostics/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.diagnostics.11.0.0-preview8.nupkg.sha512",
+        "avalonia.diagnostics.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.diagnostics.nuspec",
         "lib/net6.0/Avalonia.Diagnostics.dll",
         "lib/net6.0/Avalonia.Diagnostics.xml",
@@ -2120,15 +2332,15 @@
         "lib/netstandard2.0/Avalonia.Diagnostics.xml"
       ]
     },
-    "Avalonia.FreeDesktop/11.0.0-preview8": {
-      "sha512": "YG0O1tqX9ZrUiAzRDPLbvZUsA7PH+lfOAayk6vd+HP6tjKxL5iSUYXTUVA3GQElbN3AkB+iEVfpTKuxyXOogMQ==",
+    "Avalonia.FreeDesktop/11.0.0-rc1.1": {
+      "sha512": "YWhf9ggv93lS5Eu/cwwfBHLcxMS7fuTCFB+1IgZRgbvEv0e82UOhxZxHnvp89F30wxyCVsEm+j4tAnw8XUMLeQ==",
       "type": "package",
-      "path": "avalonia.freedesktop/11.0.0-preview8",
+      "path": "avalonia.freedesktop/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.freedesktop.11.0.0-preview8.nupkg.sha512",
+        "avalonia.freedesktop.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.freedesktop.nuspec",
         "lib/net6.0/Avalonia.FreeDesktop.dll",
         "lib/net6.0/Avalonia.FreeDesktop.xml",
@@ -2136,15 +2348,15 @@
         "lib/netstandard2.0/Avalonia.FreeDesktop.xml"
       ]
     },
-    "Avalonia.Native/11.0.0-preview8": {
-      "sha512": "+RWljAJRRgOt1Rz1QjMPpPnuYr5h6LV49hYcGPqHHOdiQ5bkYtCtMuCfSS6pTwPBfsrE9tcssW8B4iJst9IhXg==",
+    "Avalonia.Native/11.0.0-rc1.1": {
+      "sha512": "+O7j6D/U9jfsPYeJY7SmjT4fs0EtHMDVmtssBsdG/7DXO0nt5Js1of2QN0KfjF2ViKXEMCw1m2qQpb6pxCrTkQ==",
       "type": "package",
-      "path": "avalonia.native/11.0.0-preview8",
+      "path": "avalonia.native/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.native.11.0.0-preview8.nupkg.sha512",
+        "avalonia.native.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.native.nuspec",
         "lib/net6.0/Avalonia.Native.dll",
         "lib/net6.0/Avalonia.Native.xml",
@@ -2153,15 +2365,15 @@
         "runtimes/osx/native/libAvaloniaNative.dylib"
       ]
     },
-    "Avalonia.ReactiveUI/11.0.0-preview8": {
-      "sha512": "9BQ6heTlZlAqa3tzIJTwHlnITaQ2dMgSSrz3/2gvW88uqdRIDXUo8LAKmyUaC6fjLa0IEXCdUsP4Y0nMap4zkw==",
+    "Avalonia.ReactiveUI/11.0.0-rc1.1": {
+      "sha512": "rNErZFF9azkrK+msPgiG0cMYXnXSQ2fTiVmY54Fi167NlfiTbc3LoK5igquiOey+zUpZO4erVyulAtsGDdNVQA==",
       "type": "package",
-      "path": "avalonia.reactiveui/11.0.0-preview8",
+      "path": "avalonia.reactiveui/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.reactiveui.11.0.0-preview8.nupkg.sha512",
+        "avalonia.reactiveui.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.reactiveui.nuspec",
         "lib/net6.0/Avalonia.ReactiveUI.dll",
         "lib/net6.0/Avalonia.ReactiveUI.xml",
@@ -2169,15 +2381,15 @@
         "lib/netstandard2.0/Avalonia.ReactiveUI.xml"
       ]
     },
-    "Avalonia.Remote.Protocol/11.0.0-preview8": {
-      "sha512": "Sy9XRwr2Hm200bw7hOzlEfsrFxRweX8EYJAsTMnaN/VBO0d178Srq+Ya7ePRNDwDn04w5R8r8gJt73A1c77TvQ==",
+    "Avalonia.Remote.Protocol/11.0.0-rc1.1": {
+      "sha512": "jBCrXnisv6T7d1pQjq2IcvjTPKZV9ysH+Dm0Uwrg2acldymK9rmXBEm2M/M/VUQbsvt3xeBhIHpJVCRaqTu9KA==",
       "type": "package",
-      "path": "avalonia.remote.protocol/11.0.0-preview8",
+      "path": "avalonia.remote.protocol/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.remote.protocol.11.0.0-preview8.nupkg.sha512",
+        "avalonia.remote.protocol.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.remote.protocol.nuspec",
         "lib/net6.0/Avalonia.Remote.Protocol.dll",
         "lib/net6.0/Avalonia.Remote.Protocol.xml",
@@ -2185,15 +2397,15 @@
         "lib/netstandard2.0/Avalonia.Remote.Protocol.xml"
       ]
     },
-    "Avalonia.Skia/11.0.0-preview8": {
-      "sha512": "Eofo+9O7L1tMupcQIwGabeUI0K0h2JW0ijONvJdUR9y0DLKAE1dJ58RAzlBBSi6DKBzG+lJHJcHYTHhmw7nThw==",
+    "Avalonia.Skia/11.0.0-rc1.1": {
+      "sha512": "mfqqLmRxYi9SfgQ4p873um33bMTDLgYUdsX4l6TARJ3qOY1s4sRTyjep1D9Fqs3rLpA8aJesg59wsNKjrLg+sw==",
       "type": "package",
-      "path": "avalonia.skia/11.0.0-preview8",
+      "path": "avalonia.skia/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.skia.11.0.0-preview8.nupkg.sha512",
+        "avalonia.skia.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.skia.nuspec",
         "lib/net6.0/Avalonia.Skia.dll",
         "lib/net6.0/Avalonia.Skia.xml",
@@ -2201,15 +2413,15 @@
         "lib/netstandard2.0/Avalonia.Skia.xml"
       ]
     },
-    "Avalonia.Themes.Simple/11.0.0-preview8": {
-      "sha512": "JfG5+d/kezokap4hTk97VL9kdJpMwhaVslwkBVvGHjHpkPW9kg66ptbqGdN7qBwUWhf01c5p4qFzijNZWxH4EQ==",
+    "Avalonia.Themes.Simple/11.0.0-rc1.1": {
+      "sha512": "mD/MzClZ4Wi1Akll8M1l7b3pka8dClsCxPD1wiLdUYJHIH1ziWHDquue/YCRiiGnaXafKQGzjdN8fuxfQWaIJA==",
       "type": "package",
-      "path": "avalonia.themes.simple/11.0.0-preview8",
+      "path": "avalonia.themes.simple/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.themes.simple.11.0.0-preview8.nupkg.sha512",
+        "avalonia.themes.simple.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.themes.simple.nuspec",
         "lib/net6.0/Avalonia.Themes.Simple.dll",
         "lib/net6.0/Avalonia.Themes.Simple.xml",
@@ -2217,15 +2429,15 @@
         "lib/netstandard2.0/Avalonia.Themes.Simple.xml"
       ]
     },
-    "Avalonia.Win32/11.0.0-preview8": {
-      "sha512": "DUMLn+7W5aahoOhOaB0/8vOIWIx56zSL9e+Nr9bZPiAcePM7R5DzyhGf2Du5n0dNveCgxp/sqJn6q8WgHLc86A==",
+    "Avalonia.Win32/11.0.0-rc1.1": {
+      "sha512": "BndHOIhxZO+lep811MhrJBhaGwldIyxQ65OrLtBzQ3hFalukD7GnaxTqF4nksiT3xxctoJjK5nRQnC9XO+SbWg==",
       "type": "package",
-      "path": "avalonia.win32/11.0.0-preview8",
+      "path": "avalonia.win32/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.win32.11.0.0-preview8.nupkg.sha512",
+        "avalonia.win32.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.win32.nuspec",
         "lib/net6.0/Avalonia.Win32.dll",
         "lib/net6.0/Avalonia.Win32.xml",
@@ -2233,15 +2445,15 @@
         "lib/netstandard2.0/Avalonia.Win32.xml"
       ]
     },
-    "Avalonia.X11/11.0.0-preview8": {
-      "sha512": "6qjkXmCnZ7qwt3kv6SJhKgoBP9O/ujT/3bRo7lNWTOBhYMM2oJei74bFuAUUbpSR9uZXeC0tXqv8P7v/DwQiqA==",
+    "Avalonia.X11/11.0.0-rc1.1": {
+      "sha512": "pYSN37yiJX1q8giMpVhBAFNYIkg+XMeseJKR25TWIWZyxAqsC7tTgWlDj5d+8H9Z7lI5QjfRZITzYXQm0eKzwg==",
       "type": "package",
-      "path": "avalonia.x11/11.0.0-preview8",
+      "path": "avalonia.x11/11.0.0-rc1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.x11.11.0.0-preview8.nupkg.sha512",
+        "avalonia.x11.11.0.0-rc1.1.nupkg.sha512",
         "avalonia.x11.nuspec",
         "lib/net6.0/Avalonia.X11.dll",
         "lib/net6.0/Avalonia.X11.xml",
@@ -2249,14 +2461,14 @@
         "lib/netstandard2.0/Avalonia.X11.xml"
       ]
     },
-    "ColorTextBlock.Avalonia/11.0.0-b1": {
-      "sha512": "nrNUo2DAmSutchIM3iQ9KUx2Nk7zMyEWJ4oDMtzrn9Xkif8l5qoE0fo49rJQMfPpig4D6SQWIcI6LHwTuHTF2A==",
+    "ColorTextBlock.Avalonia/11.0.0-d1": {
+      "sha512": "sQAZgCwCS7vT5qGlxivrx6WAb1xkP47p4gAVmv5GQapfW8YXuk9a/t6QLmjJqFTJAAdk8M1EAUde0Ox5HPxjHA==",
       "type": "package",
-      "path": "colortextblock.avalonia/11.0.0-b1",
+      "path": "colortextblock.avalonia/11.0.0-d1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "colortextblock.avalonia.11.0.0-b1.nupkg.sha512",
+        "colortextblock.avalonia.11.0.0-d1.nupkg.sha512",
         "colortextblock.avalonia.nuspec",
         "lib/net461/ColorTextBlock.Avalonia.dll",
         "lib/net6.0/ColorTextBlock.Avalonia.dll",
@@ -2470,10 +2682,10 @@
         "logo.png"
       ]
     },
-    "Markdown.Avalonia.Tight/11.0.0-b1": {
-      "sha512": "uOhsr4d9pACqAEK+e1XjZzHXjgHoiPO4eOpiu0/0O92Q4Cc1P6A2tI8K5luHtoLgZI1n4PnFdrwxHXhBKjJENA==",
+    "Markdown.Avalonia.Tight/11.0.0-d1": {
+      "sha512": "fwl4wrvTdLFLUfkFezRY6SSfPmXIJcRyYChMDiMKFEGo1rKdPMnmcJbK+BWYXxZS+g66E6SFl/ca4kakhTk1HQ==",
       "type": "package",
-      "path": "markdown.avalonia.tight/11.0.0-b1",
+      "path": "markdown.avalonia.tight/11.0.0-d1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2482,19 +2694,19 @@
         "lib/net6.0/Markdown.Avalonia.dll",
         "lib/netcoreapp2.0/Markdown.Avalonia.dll",
         "lib/netstandard2.0/Markdown.Avalonia.dll",
-        "markdown.avalonia.tight.11.0.0-b1.nupkg.sha512",
+        "markdown.avalonia.tight.11.0.0-d1.nupkg.sha512",
         "markdown.avalonia.tight.nuspec"
       ]
     },
-    "MessageBox.Avalonia/2.3.1-prev7.0": {
-      "sha512": "qpyZmTAbUm5G7skHfz/iU4Se/NoczoaDqCnzNEtJq/9R4YxQjS6iSa4jUz/OHhFV2NAb7uvFCETcqRdEbrE3ow==",
+    "MessageBox.Avalonia/2.3.1-rc1": {
+      "sha512": "daVxXoPEUHBHqjOZUi6S8HrWq4NbhyI20BrpXbiHu5FOH2iy7x1sLDo/Bd38Y6PnuykEGqWT4EXUFgSDYaekOA==",
       "type": "package",
-      "path": "messagebox.avalonia/2.3.1-prev7.0",
+      "path": "messagebox.avalonia/2.3.1-rc1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/MessageBox.Avalonia.dll",
-        "messagebox.avalonia.2.3.1-prev7.0.nupkg.sha512",
+        "messagebox.avalonia.2.3.1-rc1.nupkg.sha512",
         "messagebox.avalonia.nuspec"
       ]
     },
@@ -2851,10 +3063,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.5": {
-      "sha512": "RXbRLHHWP2Z3pq8qcL5nQ6LPeoOyp8hasM5bd0Te8PiQi3RjWQR4tcbdY5XMqQ+oTO9wA8/RLhZRn/hnxlTDnQ==",
+    "Microsoft.EntityFrameworkCore/7.0.8": {
+      "sha512": "J4eNwnGsaEeudWGvgEO+n9u5XYfKb/QmMjLPH/T2xUBKzuZsJ7nyNoEtNDo3DhQqyDHPxf2fDSuUwSJQFEj6JQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.5",
+      "path": "microsoft.entityframeworkcore/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2862,42 +3074,42 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
-      "sha512": "iwQso+hFRsEWjhH2WsEQj1D2QE5BlEXiXEt6A3SlYTPRPdZsyTNDeDDEdtxL+H/UJPQgQYY+9SMMRcEiXBmCAA==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.8": {
+      "sha512": "4+Kj43oGUHPneA/uZurt9Nj9NZt8PBV0vMI+iKOUhmHXQKCkRUzpJaRKIZ1QLy8LiEL5D3/AIRfclgokdJnINQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.5",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.5": {
-      "sha512": "yMLM/aK1MikVqpjxd7PJ1Pjgztd3VAd26ZHxyjxG3RPeM9cHjvS5tCg9kAAayR6eHmBg0ffZsHdT28WfA5tTlA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.8": {
+      "sha512": "FSEFD1j4HerUaPyOZ0/NQjZZBkxqDSx2ZKEZXOz1aOQz7PY2f1D6ZuIBTLF8zAq11f058O2cl72GXVRMfwQ5iw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.5",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.5": {
-      "sha512": "fzoU+Jk/chkqVOzDjuF+fwdc/6Tyqbp9L7rDORqB6IwHRG7nr+QnFOPdRi3B5kAZldvsvhUt+6Cl5qzeLT7B0Q==",
+    "Microsoft.EntityFrameworkCore.Design/7.0.8": {
+      "sha512": "dG+QxTeRZhtEbsN+VXF2D5z6kT1/pOFRkSTXnggugqTz3p7qSceyLqJoyGZXI8l3YsmDywgD7yfxvcy0X8uZMA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/7.0.5",
+      "path": "microsoft.entityframeworkcore.design/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2905,35 +3117,35 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.5": {
-      "sha512": "u/33DC4S6g2hpMPgBc5Kdnlz//nqHR5c/ovgjtiP/wQ7sOd0EOdygVzUJAAOxCwbtAHDsJXS9Vc3jLFYq0yu8Q==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.8": {
+      "sha512": "C9NYwZdtAd0Ov2jQz4vNplifA/zmvn7BN6k7HrxRdbK4pdg18mFDQAedkJX2hGngNEMwssapzlRhsUSV0Q34rA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.5",
+      "path": "microsoft.entityframeworkcore.relational/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.5": {
-      "sha512": "OV/PUGBVSbQVd2daTeXoMBoao2qtfBgT2TuaYo48xRYUS2gH++f8OFiZc6zwASqkMKgs1/t5uVlxgKl18m/1Fw==",
+    "Microsoft.EntityFrameworkCore.Tools/7.0.8": {
+      "sha512": "98zo4OdBnPXYVD+Fl+a5ofsVLokd9hsp9W1D+VeuIowG0Cbxr2gQ9PqCIqOXxafl5ykKlbO+Bmn7lLRclMOq4Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/7.0.5",
+      "path": "microsoft.entityframeworkcore.tools/7.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.7.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.7.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
         "tools/EntityFrameworkCore.PS2.psd1",
         "tools/EntityFrameworkCore.PS2.psm1",
@@ -3270,17 +3482,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.1.2": {
-      "sha512": "mOJy3M0UN+LUG21dLGMxaWZEP6xYpQEpLuvuEQBaownaX4YuhH6NmNUlN9si+vNkAS6dwJ//N1O4DmLf2CikVg==",
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.1.2",
+      "path": "microsoft.netcore.platforms/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -3300,6 +3512,53 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Win32.Registry/4.7.0": {
+      "sha512": "KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+      "type": "package",
+      "path": "microsoft.win32.registry/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/Microsoft.Win32.Registry.dll",
+        "lib/net461/Microsoft.Win32.Registry.dll",
+        "lib/net461/Microsoft.Win32.Registry.xml",
+        "lib/netstandard1.3/Microsoft.Win32.Registry.dll",
+        "lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "lib/netstandard2.0/Microsoft.Win32.Registry.xml",
+        "microsoft.win32.registry.4.7.0.nupkg.sha512",
+        "microsoft.win32.registry.nuspec",
+        "ref/net46/Microsoft.Win32.Registry.dll",
+        "ref/net461/Microsoft.Win32.Registry.dll",
+        "ref/net461/Microsoft.Win32.Registry.xml",
+        "ref/net472/Microsoft.Win32.Registry.dll",
+        "ref/net472/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/Microsoft.Win32.Registry.dll",
+        "ref/netstandard1.3/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/de/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/es/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/fr/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/it/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/ja/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/ko/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/ru/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/zh-hans/Microsoft.Win32.Registry.xml",
+        "ref/netstandard1.3/zh-hant/Microsoft.Win32.Registry.xml",
+        "ref/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "ref/netstandard2.0/Microsoft.Win32.Registry.xml",
+        "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
+        "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/net461/Microsoft.Win32.Registry.xml",
+        "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -3371,6 +3630,94 @@
         "mysqlconnector.nuspec"
       ]
     },
+    "NAudio/2.1.0": {
+      "sha512": "iamDtIq4Tcq6BDEMatX7Wj6KI7rscECS72ZejjnL9RK8BgfrVRH2RlhlQVNxXNp9Up1eFESEiCILNBo7//Rr0g==",
+      "type": "package",
+      "path": "naudio/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/NAudio.dll",
+        "lib/net472/NAudio.xml",
+        "lib/net6.0-windows7.0/NAudio.dll",
+        "lib/net6.0-windows7.0/NAudio.xml",
+        "lib/net6.0/NAudio.dll",
+        "lib/net6.0/NAudio.xml",
+        "lib/netcoreapp3.1/NAudio.dll",
+        "lib/netcoreapp3.1/NAudio.xml",
+        "license.txt",
+        "naudio-icon.png",
+        "naudio.2.1.0.nupkg.sha512",
+        "naudio.nuspec"
+      ]
+    },
+    "NAudio.Asio/2.1.0": {
+      "sha512": "YMXffgqPTsQIjmXYyzLrXSpQZzC7ZH49mmdXaPW3o/5S+AhFKZeOrwUA2fkvphQdGhryObbZnPAq+u8uABkH5A==",
+      "type": "package",
+      "path": "naudio.asio/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NAudio.Asio.dll",
+        "naudio-icon.png",
+        "naudio.asio.2.1.0.nupkg.sha512",
+        "naudio.asio.nuspec"
+      ]
+    },
+    "NAudio.Core/2.1.0": {
+      "sha512": "0iowfmolibU4KxjaC/s7lox/BeDg76UVvXtCuCzRiNpylVndqsxXxp+bVWFrpv0KzQDIKLxZrnDmYENlAI0u9g==",
+      "type": "package",
+      "path": "naudio.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NAudio.Core.dll",
+        "naudio-icon.png",
+        "naudio.core.2.1.0.nupkg.sha512",
+        "naudio.core.nuspec"
+      ]
+    },
+    "NAudio.Midi/2.1.0": {
+      "sha512": "m2ZunnyZ1p7OoAMh1scHRVle+GiFuIRrzkcxZJREUFHje8O2hcMGya3ZAjD+dV2FTcrbqNQUc4kJy9LOTuydUw==",
+      "type": "package",
+      "path": "naudio.midi/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NAudio.Midi.dll",
+        "naudio-icon.png",
+        "naudio.midi.2.1.0.nupkg.sha512",
+        "naudio.midi.nuspec"
+      ]
+    },
+    "NAudio.Wasapi/2.1.0": {
+      "sha512": "Zp/8l79aYQEu7/HfzXWVpqyIwRUPgsvCj/Qx+pR6ykJxvwjqOoUfMiEG9US1wW4d7PEzT5ZBIL+cp90t6HNNiw==",
+      "type": "package",
+      "path": "naudio.wasapi/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NAudio.Wasapi.dll",
+        "lib/uap10.0.18362/NAudio.Wasapi.dll",
+        "lib/uap10.0.18362/NAudio.Wasapi.pri",
+        "naudio-icon.png",
+        "naudio.wasapi.2.1.0.nupkg.sha512",
+        "naudio.wasapi.nuspec"
+      ]
+    },
+    "NAudio.WinMM/2.1.0": {
+      "sha512": "lUU5C+XNzKhFUIEafA/nJpbtjksFtbUd033fs27KeHlOM0r6rQFF3l75dqxg+rWkGu81MfkBbYrNpH9p8qmtBA==",
+      "type": "package",
+      "path": "naudio.winmm/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NAudio.WinMM.dll",
+        "naudio-icon.png",
+        "naudio.winmm.2.1.0.nupkg.sha512",
+        "naudio.winmm.nuspec"
+      ]
+    },
     "Pomelo.EntityFrameworkCore.MySql/7.0.0": {
       "sha512": "Qk5WB/skSZet5Yrz6AN2ywjZaB1pxfAmvQ+5I4khTkLwwIamI4QJoH2NphCWLFQL+2ar8HvsNCTmwYk0qhqL0w==",
       "type": "package",
@@ -3434,6 +3781,296 @@
         "logo.png",
         "reactiveui.18.3.1.nupkg.sha512",
         "reactiveui.nuspec"
+      ]
+    },
+    "RtlSdrManager/0.2.1": {
+      "sha512": "tPbtlPlLPSzueLaM8WoahzkfzN/pY9clXVXzRmBlQLgdUXoSOClPXEcRnbIPxQqLgrysQvbukgrRAodrVqNHcQ==",
+      "type": "package",
+      "path": "rtlsdrmanager/0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/LICENSE.md",
+        "content/README.md",
+        "lib/netcoreapp3.1/RtlSdrManager.deps.json",
+        "lib/netcoreapp3.1/RtlSdrManager.dll",
+        "lib/netcoreapp3.1/RtlSdrManager.pdb",
+        "rtlsdrmanager.0.2.1.nupkg.sha512",
+        "rtlsdrmanager.nuspec"
+      ]
+    },
+    "ScottPlot/5.0.5-beta": {
+      "sha512": "DBW0zamOp/c63CrRgu7QgU7q0yqfjcXTCG/M4k6tnpJp9MyxiqpoZE8wX1+RJ3V3wuCj+W4126ysXK1WOxYQTA==",
+      "type": "package",
+      "path": "scottplot/5.0.5-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/ScottPlot.dll",
+        "lib/net462/ScottPlot.pdb",
+        "lib/net6.0/ScottPlot.dll",
+        "lib/net6.0/ScottPlot.pdb",
+        "lib/netstandard2.0/ScottPlot.dll",
+        "lib/netstandard2.0/ScottPlot.pdb",
+        "readme.md",
+        "scottplot.5.0.5-beta.nupkg.sha512",
+        "scottplot.nuspec",
+        "src/ScottPlot5/AddPlottable.cs",
+        "src/ScottPlot5/Alignment.cs",
+        "src/ScottPlot5/Amber.cs",
+        "src/ScottPlot5/Aurora.cs",
+        "src/ScottPlot5/AutoScaleMargins.cs",
+        "src/ScottPlot5/Axis/Axes.cs",
+        "src/ScottPlot5/Axis/AxisRendering.cs",
+        "src/ScottPlot5/Axis/DateTimeAxes/DateTimeXAxis.cs",
+        "src/ScottPlot5/Axis/DateTimeAxes/IDateAxis.cs",
+        "src/ScottPlot5/Axis/IAxes.cs",
+        "src/ScottPlot5/Axis/IAxis.cs",
+        "src/ScottPlot5/Axis/IXAxis.cs",
+        "src/ScottPlot5/Axis/IYAxis.cs",
+        "src/ScottPlot5/Axis/MultiAxisLimits.cs",
+        "src/ScottPlot5/Axis/StandardAxes/AxisBase.cs",
+        "src/ScottPlot5/Axis/StandardAxes/BottomAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/LeftAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/MirroredXAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/MirroredYAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/RightAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/TopAxis.cs",
+        "src/ScottPlot5/Axis/StandardAxes/XAxisBase.cs",
+        "src/ScottPlot5/Axis/StandardAxes/YAxisBase.cs",
+        "src/ScottPlot5/Axis/TickStyle.cs",
+        "src/ScottPlot5/AxisLimits.cs",
+        "src/ScottPlot5/Benchmarking/IBenchmark.cs",
+        "src/ScottPlot5/Benchmarking/StandardBenchmark.cs",
+        "src/ScottPlot5/BitmapHeader.cs",
+        "src/ScottPlot5/Building.cs",
+        "src/ScottPlot5/Category10.cs",
+        "src/ScottPlot5/Category20.cs",
+        "src/ScottPlot5/Color.cs",
+        "src/ScottPlot5/ColorblindFriendly.cs",
+        "src/ScottPlot5/Colormap.cs",
+        "src/ScottPlot5/Colormaps/Algae.cs",
+        "src/ScottPlot5/Colormaps/Amp.cs",
+        "src/ScottPlot5/Colormaps/ArgbColormapBase.cs",
+        "src/ScottPlot5/Colormaps/Balance.cs",
+        "src/ScottPlot5/Colormaps/Blues.cs",
+        "src/ScottPlot5/Colormaps/ByteColormapBase.cs",
+        "src/ScottPlot5/Colormaps/ColormapBase.cs",
+        "src/ScottPlot5/Colormaps/Curl.cs",
+        "src/ScottPlot5/Colormaps/Deep.cs",
+        "src/ScottPlot5/Colormaps/Delta.cs",
+        "src/ScottPlot5/Colormaps/Dense.cs",
+        "src/ScottPlot5/Colormaps/Diff.cs",
+        "src/ScottPlot5/Colormaps/Grayscale.cs",
+        "src/ScottPlot5/Colormaps/GrayscaleReversed.cs",
+        "src/ScottPlot5/Colormaps/Greens.cs",
+        "src/ScottPlot5/Colormaps/Haline.cs",
+        "src/ScottPlot5/Colormaps/Ice.cs",
+        "src/ScottPlot5/Colormaps/Inferno.cs",
+        "src/ScottPlot5/Colormaps/Jet.cs",
+        "src/ScottPlot5/Colormaps/Magma.cs",
+        "src/ScottPlot5/Colormaps/Matter.cs",
+        "src/ScottPlot5/Colormaps/Oxy.cs",
+        "src/ScottPlot5/Colormaps/Phase.cs",
+        "src/ScottPlot5/Colormaps/Plasma.cs",
+        "src/ScottPlot5/Colormaps/Rain.cs",
+        "src/ScottPlot5/Colormaps/Solar.cs",
+        "src/ScottPlot5/Colormaps/Speed.cs",
+        "src/ScottPlot5/Colormaps/Tarn.cs",
+        "src/ScottPlot5/Colormaps/Tempo.cs",
+        "src/ScottPlot5/Colormaps/Thermal.cs",
+        "src/ScottPlot5/Colormaps/Topo.cs",
+        "src/ScottPlot5/Colormaps/Turbid.cs",
+        "src/ScottPlot5/Colormaps/Turbo.cs",
+        "src/ScottPlot5/Colormaps/Viridis.cs",
+        "src/ScottPlot5/Colors.cs",
+        "src/ScottPlot5/CompilerServices/IsExternalInit.cs",
+        "src/ScottPlot5/Control/ContextMenuItem.cs",
+        "src/ScottPlot5/Control/IPlotControl.cs",
+        "src/ScottPlot5/Control/IZoomRectangle.cs",
+        "src/ScottPlot5/Control/InputBindings.cs",
+        "src/ScottPlot5/Control/Interaction.cs",
+        "src/ScottPlot5/Control/Key.cs",
+        "src/ScottPlot5/Control/KeyboardState.cs",
+        "src/ScottPlot5/Control/LockedAxes.cs",
+        "src/ScottPlot5/Control/MouseButton.cs",
+        "src/ScottPlot5/Control/MouseDrag.cs",
+        "src/ScottPlot5/Control/MouseState.cs",
+        "src/ScottPlot5/Control/MouseWheelDirection.cs",
+        "src/ScottPlot5/Control/PlotActions.cs",
+        "src/ScottPlot5/Control/StandardActions.cs",
+        "src/ScottPlot5/Control/StandardZoomRectangle.cs",
+        "src/ScottPlot5/CoordinateRange.cs",
+        "src/ScottPlot5/CoordinateRect.cs",
+        "src/ScottPlot5/CoordinateSize.cs",
+        "src/ScottPlot5/Coordinates.cs",
+        "src/ScottPlot5/Custom.cs",
+        "src/ScottPlot5/Dark.cs",
+        "src/ScottPlot5/DarkPastel.cs",
+        "src/ScottPlot5/DataOperations.cs",
+        "src/ScottPlot5/DataSources/IHasAxisLimits.cs",
+        "src/ScottPlot5/DataSources/IOHLCSource.cs",
+        "src/ScottPlot5/DataSources/IScatterSource.cs",
+        "src/ScottPlot5/DataSources/ISignalSource.cs",
+        "src/ScottPlot5/DataSources/OHLCSource.cs",
+        "src/ScottPlot5/DataSources/ScatterSourceCoordinates.cs",
+        "src/ScottPlot5/DataSources/ScatterSourceWithCachedLimits.cs",
+        "src/ScottPlot5/DataSources/ScatterSourceXsYs.cs",
+        "src/ScottPlot5/DataSources/SignalSource.cs",
+        "src/ScottPlot5/Descriptive.cs",
+        "src/ScottPlot5/Drawing.cs",
+        "src/ScottPlot5/Edge.cs",
+        "src/ScottPlot5/Extensions/DateTimeExtensions.cs",
+        "src/ScottPlot5/Extensions/EnumerableExtensions.cs",
+        "src/ScottPlot5/Extensions/InternationalizationExtensions.cs",
+        "src/ScottPlot5/Extensions/NumericExtensions.cs",
+        "src/ScottPlot5/Extensions/SkiaSharpExtensions.cs",
+        "src/ScottPlot5/Extensions/SystemDrawingExtensions.cs",
+        "src/ScottPlot5/FillStyle.cs",
+        "src/ScottPlot5/FontService.cs",
+        "src/ScottPlot5/FontStyle.cs",
+        "src/ScottPlot5/FontWeight.cs",
+        "src/ScottPlot5/Frost.cs",
+        "src/ScottPlot5/Generate.cs",
+        "src/ScottPlot5/Grids/DefaultGrid.cs",
+        "src/ScottPlot5/Hatches/Checker.cs",
+        "src/ScottPlot5/Hatches/Dots.cs",
+        "src/ScottPlot5/Hatches/Grid.cs",
+        "src/ScottPlot5/Hatches/Square.cs",
+        "src/ScottPlot5/Hatches/Striped.cs",
+        "src/ScottPlot5/Histogram.cs",
+        "src/ScottPlot5/IColormap.cs",
+        "src/ScottPlot5/IGrid.cs",
+        "src/ScottPlot5/IHasColorAxis.cs",
+        "src/ScottPlot5/IHatch.cs",
+        "src/ScottPlot5/ILegend.cs",
+        "src/ScottPlot5/IMarker.cs",
+        "src/ScottPlot5/IOHLC.cs",
+        "src/ScottPlot5/IPalette.cs",
+        "src/ScottPlot5/IPanel.cs",
+        "src/ScottPlot5/IPlottable.cs",
+        "src/ScottPlot5/IPlottableGL.cs",
+        "src/ScottPlot5/ITickGenerator.cs",
+        "src/ScottPlot5/Image.cs",
+        "src/ScottPlot5/ImageFormat.cs",
+        "src/ScottPlot5/ImageOperations.cs",
+        "src/ScottPlot5/Label.cs",
+        "src/ScottPlot5/Layouts/ILayoutMaker.cs",
+        "src/ScottPlot5/Layouts/Layout.cs",
+        "src/ScottPlot5/Layouts/StandardLayoutMaker.cs",
+        "src/ScottPlot5/LegendItem.cs",
+        "src/ScottPlot5/Legends/Common.cs",
+        "src/ScottPlot5/Legends/LegendItemSize.cs",
+        "src/ScottPlot5/Legends/SizedLegendItem.cs",
+        "src/ScottPlot5/Legends/StandardLegend.cs",
+        "src/ScottPlot5/LightOcean.cs",
+        "src/ScottPlot5/LightSpectrum.cs",
+        "src/ScottPlot5/LinePattern.cs",
+        "src/ScottPlot5/LineStyle.cs",
+        "src/ScottPlot5/MarkerShape.cs",
+        "src/ScottPlot5/MarkerStyle.cs",
+        "src/ScottPlot5/Markers/Circle.cs",
+        "src/ScottPlot5/Markers/Square.cs",
+        "src/ScottPlot5/Microcharts.cs",
+        "src/ScottPlot5/NamedColors/INamedColors.cs",
+        "src/ScottPlot5/NamedColors/NamedColorsBase.cs",
+        "src/ScottPlot5/NamedColors/WebColors.cs",
+        "src/ScottPlot5/NamedColors/WindowsClassicColors.cs",
+        "src/ScottPlot5/NamedColors/WindowsStandardColors.cs",
+        "src/ScottPlot5/NamedColors/WindowsVistaColors.cs",
+        "src/ScottPlot5/NamedColors/XkcdColors.cs",
+        "src/ScottPlot5/Nero.cs",
+        "src/ScottPlot5/Nord.cs",
+        "src/ScottPlot5/Normal.cs",
+        "src/ScottPlot5/NumericConversion.cs",
+        "src/ScottPlot5/OHLC.cs",
+        "src/ScottPlot5/OneHalf.cs",
+        "src/ScottPlot5/OneHalfDark.cs",
+        "src/ScottPlot5/Orientation.cs",
+        "src/ScottPlot5/Palette.cs",
+        "src/ScottPlot5/Panels/BoxPanel.cs",
+        "src/ScottPlot5/Panels/ColorBar.cs",
+        "src/ScottPlot5/Panels/TitlePanel.cs",
+        "src/ScottPlot5/PastelWheel.cs",
+        "src/ScottPlot5/Penumbra.cs",
+        "src/ScottPlot5/Pixel.cs",
+        "src/ScottPlot5/PixelLength.cs",
+        "src/ScottPlot5/PixelPadding.cs",
+        "src/ScottPlot5/PixelRangeY.cs",
+        "src/ScottPlot5/PixelRect.cs",
+        "src/ScottPlot5/PixelSize.cs",
+        "src/ScottPlot5/Platform.cs",
+        "src/ScottPlot5/Plot.cs",
+        "src/ScottPlot5/Plottables/BarPlot.cs",
+        "src/ScottPlot5/Plottables/BoxPlot.cs",
+        "src/ScottPlot5/Plottables/CandlestickPlot.cs",
+        "src/ScottPlot5/Plottables/ErrorBar.cs",
+        "src/ScottPlot5/Plottables/Heatmap.cs",
+        "src/ScottPlot5/Plottables/OHLCPlot.cs",
+        "src/ScottPlot5/Plottables/Pie.cs",
+        "src/ScottPlot5/Plottables/Scatter.cs",
+        "src/ScottPlot5/Plottables/Signal.cs",
+        "src/ScottPlot5/PolarNight.cs",
+        "src/ScottPlot5/RandomDataGenerator.cs",
+        "src/ScottPlot5/RandomDataGeneratorExtensions.cs",
+        "src/ScottPlot5/Range.cs",
+        "src/ScottPlot5/Redness.cs",
+        "src/ScottPlot5/Rendering/Common.cs",
+        "src/ScottPlot5/Rendering/IRenderer.cs",
+        "src/ScottPlot5/Rendering/RenderDetails.cs",
+        "src/ScottPlot5/Rendering/StandardRenderer.cs",
+        "src/ScottPlot5/SampleData.cs",
+        "src/ScottPlot5/ScottPlot.csproj",
+        "src/ScottPlot5/SharedColor.cs",
+        "src/ScottPlot5/SharedExtensions.cs",
+        "src/ScottPlot5/SharedPaletteDatabase.cs",
+        "src/ScottPlot5/SnowStorm.cs",
+        "src/ScottPlot5/Stylers/AxisStyler.cs",
+        "src/ScottPlot5/Stylers/PlotStyler.cs",
+        "src/ScottPlot5/SummerSplash.cs",
+        "src/ScottPlot5/TODO.cs",
+        "src/ScottPlot5/Tick.cs",
+        "src/ScottPlot5/TickGenerators/DateTimeAutomatic.cs",
+        "src/ScottPlot5/TickGenerators/DateTimeFixedInterval.cs",
+        "src/ScottPlot5/TickGenerators/IDateTickGenerator.cs",
+        "src/ScottPlot5/TickGenerators/ITimeUnit.cs",
+        "src/ScottPlot5/TickGenerators/NumericAutomatic.cs",
+        "src/ScottPlot5/TickGenerators/NumericFixedInterval.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Centisecond.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Day.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Decisecond.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Hour.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Millisecond.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Minute.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Month.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Second.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/StandardDivisors.cs",
+        "src/ScottPlot5/TickGenerators/TimeUnits/Year.cs",
+        "src/ScottPlot5/Tsitsulin.cs",
+        "src/ScottPlot5/Usings.cs",
+        "src/ScottPlot5/Version.cs"
+      ]
+    },
+    "ScottPlot.Avalonia/5.0.5-beta": {
+      "sha512": "EKhNY/wM+3a8Fyyn7SDn7sViV8OS6bbMkbINxbq+JgesKJk+okQBHOJVPvnzZJ9C1LJGwtvLAxcDy+3XEnG/aw==",
+      "type": "package",
+      "path": "scottplot.avalonia/5.0.5-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/ScottPlot.Avalonia.dll",
+        "lib/net462/ScottPlot.Avalonia.pdb",
+        "lib/net6.0/ScottPlot.Avalonia.dll",
+        "lib/net6.0/ScottPlot.Avalonia.pdb",
+        "readme.md",
+        "scottplot.avalonia.5.0.5-beta.nupkg.sha512",
+        "scottplot.avalonia.nuspec",
+        "src/ScottPlot.Avalonia/AssemblyInfo.cs",
+        "src/ScottPlot.Avalonia/AvaPlot.axaml.cs",
+        "src/ScottPlot.Avalonia/AvaPlotExtensions.cs",
+        "src/ScottPlot.Avalonia/ScottPlot.Avalonia.csproj"
       ]
     },
     "SkiaSharp/2.88.3": {
@@ -3932,6 +4569,35 @@
         "system.drawing.common.6.0.0.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Drawing.Primitives/4.3.0": {
+      "sha512": "1QU/c35gwdhvj77fkScXQQbjiVAqIL3fEYn/19NE0CV/ic5TN5PyWAft8HsrbRd4SBLEoErNCkWSzMDc0MmbRw==",
+      "type": "package",
+      "path": "system.drawing.primitives/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.Drawing.Primitives.dll",
+        "lib/netstandard1.1/System.Drawing.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Drawing.Primitives.dll",
+        "ref/netstandard1.1/System.Drawing.Primitives.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.drawing.primitives.4.3.0.nupkg.sha512",
+        "system.drawing.primitives.nuspec"
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
@@ -5294,6 +5960,106 @@
         "system.runtime.interopservices.nuspec"
       ]
     },
+    "System.Security.AccessControl/4.7.0": {
+      "sha512": "JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "type": "package",
+      "path": "system.security.accesscontrol/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.Security.AccessControl.dll",
+        "lib/net461/System.Security.AccessControl.dll",
+        "lib/net461/System.Security.AccessControl.xml",
+        "lib/netstandard1.3/System.Security.AccessControl.dll",
+        "lib/netstandard2.0/System.Security.AccessControl.dll",
+        "lib/netstandard2.0/System.Security.AccessControl.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net46/System.Security.AccessControl.dll",
+        "ref/net461/System.Security.AccessControl.dll",
+        "ref/net461/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/System.Security.AccessControl.dll",
+        "ref/netstandard1.3/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/de/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/es/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/fr/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/it/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/ja/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/ko/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/ru/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.AccessControl.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.AccessControl.xml",
+        "ref/netstandard2.0/System.Security.AccessControl.dll",
+        "ref/netstandard2.0/System.Security.AccessControl.xml",
+        "ref/uap10.0.16299/_._",
+        "runtimes/win/lib/net46/System.Security.AccessControl.dll",
+        "runtimes/win/lib/net461/System.Security.AccessControl.dll",
+        "runtimes/win/lib/net461/System.Security.AccessControl.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.xml",
+        "runtimes/win/lib/netstandard1.3/System.Security.AccessControl.dll",
+        "runtimes/win/lib/uap10.0.16299/_._",
+        "system.security.accesscontrol.4.7.0.nupkg.sha512",
+        "system.security.accesscontrol.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "sha512": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "type": "package",
+      "path": "system.security.principal.windows/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.Security.Principal.Windows.dll",
+        "lib/net461/System.Security.Principal.Windows.dll",
+        "lib/net461/System.Security.Principal.Windows.xml",
+        "lib/netstandard1.3/System.Security.Principal.Windows.dll",
+        "lib/netstandard2.0/System.Security.Principal.Windows.dll",
+        "lib/netstandard2.0/System.Security.Principal.Windows.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net46/System.Security.Principal.Windows.dll",
+        "ref/net461/System.Security.Principal.Windows.dll",
+        "ref/net461/System.Security.Principal.Windows.xml",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.dll",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/System.Security.Principal.Windows.dll",
+        "ref/netstandard1.3/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/de/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/es/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/fr/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/it/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ja/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ko/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ru/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Principal.Windows.xml",
+        "ref/netstandard2.0/System.Security.Principal.Windows.dll",
+        "ref/netstandard2.0/System.Security.Principal.Windows.xml",
+        "ref/uap10.0.16299/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/net46/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net461/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net461/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/uap10.0.16299/_._",
+        "system.security.principal.windows.4.7.0.nupkg.sha512",
+        "system.security.principal.windows.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
@@ -5692,15 +6458,19 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Avalonia >= 11.0.0-preview8",
-      "Avalonia.Desktop >= 11.0.0-preview8",
-      "Avalonia.Diagnostics >= 11.0.0-preview8",
-      "Avalonia.ReactiveUI >= 11.0.0-preview8",
-      "MessageBox.Avalonia >= 2.3.1-prev7.0",
-      "Microsoft.EntityFrameworkCore >= 7.0.5",
-      "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
-      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0"
+      "Avalonia >= 11.0.0-rc1.1",
+      "Avalonia.Desktop >= 11.0.0-rc1.1",
+      "Avalonia.Diagnostics >= 11.0.0-rc1.1",
+      "Avalonia.ReactiveUI >= 11.0.0-rc1.1",
+      "MessageBox.Avalonia >= 2.3.1-rc1",
+      "Microsoft.EntityFrameworkCore >= 7.0.8",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.8",
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.8",
+      "NAudio >= 2.1.0",
+      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
+      "RtlSdrManager >= 0.2.1",
+      "ScottPlot >= 5.0.5-beta",
+      "ScottPlot.Avalonia >= 5.0.5-beta"
     ]
   },
   "packageFolders": {
@@ -5724,6 +6494,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "R:\\Установкщики\\Установщики системных компонентов\\MyNugetPackages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5744,43 +6515,59 @@
         "dependencies": {
           "Avalonia": {
             "target": "Package",
-            "version": "[11.0.0-preview8, )"
+            "version": "[11.0.0-rc1.1, )"
           },
           "Avalonia.Desktop": {
             "target": "Package",
-            "version": "[11.0.0-preview8, )"
+            "version": "[11.0.0-rc1.1, )"
           },
           "Avalonia.Diagnostics": {
             "target": "Package",
-            "version": "[11.0.0-preview8, )"
+            "version": "[11.0.0-rc1.1, )"
           },
           "Avalonia.ReactiveUI": {
             "target": "Package",
-            "version": "[11.0.0-preview8, )"
+            "version": "[11.0.0-rc1.1, )"
           },
           "MessageBox.Avalonia": {
             "target": "Package",
-            "version": "[2.3.1-prev7.0, )"
+            "version": "[2.3.1-rc1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.5, )"
+            "version": "[7.0.8, )"
+          },
+          "NAudio": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "RtlSdrManager": {
+            "target": "Package",
+            "version": "[0.2.1, )"
+          },
+          "ScottPlot": {
+            "target": "Package",
+            "version": "[5.0.5-beta, )"
+          },
+          "ScottPlot.Avalonia": {
+            "target": "Package",
+            "version": "[5.0.5-beta, )"
           }
         },
         "imports": [
@@ -5799,7 +6586,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }

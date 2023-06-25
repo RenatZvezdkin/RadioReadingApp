@@ -1,4 +1,3 @@
-using Avalonia.Controls;
 using CrossplatformRadioApp.Models;
 using CrossplatformRadioApp.Views;
 
