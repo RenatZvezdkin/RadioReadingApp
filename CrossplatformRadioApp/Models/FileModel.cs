@@ -12,27 +12,46 @@ namespace CrossplatformRadioApp.Models
     class FileModel
     {
         private string _name, _format, _creationDateString;
+        /// <summary>
+        /// Имя файла без формата
+        /// </summary>
         public string Name => _name; 
+        /// <summary>
+        /// Формат файла, при отсутствии null
+        /// </summary>
         public string? Format => _format==""? null: _format; 
+        /// <summary>
+        /// Имя файла вместе с форматом. Если формат равен null, то возвращает просто имя файла
+        /// </summary>
         public string NameWithFormat => string.IsNullOrWhiteSpace(Format) ? Name: Name+"."+Format;
         private int _id;
+        /// <summary>
+        /// Показательная дата создания файла
+        /// </summary>
         public string CreationDate => _creationDateString;
-        private long _fileSize;
-        public string FileSize => _fileSize.ToString();
+        /// <summary>
+        /// Создает экземпляр модели файла с большинством необходимых параметров
+        /// </summary>
+        /// <param name="databaseEntry">запись из базы данных для файла</param>
         public FileModel(SavedFile databaseEntry)
         {
             _id = databaseEntry.Id;
             _name = databaseEntry.FileName;
             _format = databaseEntry.Format;
-            _fileSize = databaseEntry.ByteCode.LongLength;
             _creationDateString = databaseEntry.DateOfSaving.ToLocalTime().ToShortDateString() +" "+
                                   databaseEntry.DateOfSaving.ToLocalTime().ToShortTimeString();
         }
-        public void SaveToDirectory(string directory, Func<bool>? actionIfFileExist=null)
+        /// <summary>
+        /// Загружает файл из базы данных и переносит его по выбранному пути
+        /// </summary>
+        /// <param name="directory">путь без имени файла</param>
+        /// <param name="actionIfFileExist">условие, которое, при существовании файла с таким же именем в том же пути, должно быть вполнено, чтобы заменить файл.
+        /// Если равен null, то всегда заменяет прежний файл</param>
+        public void SaveToDirectory(string directory, Func<string, bool>? actionIfFileExist=null)
         {
             string filepath = Path.Combine(directory, NameWithFormat);
             if (File.Exists(filepath))
-                if(actionIfFileExist==null || actionIfFileExist.Invoke())
+                if(actionIfFileExist==null || actionIfFileExist.Invoke(filepath))
                     File.Delete(filepath);
                 else
                     return;
@@ -43,7 +62,12 @@ namespace CrossplatformRadioApp.Models
             fileStream.Write(fileBytes, 0, fileBytes.Length);
             fileStream.Flush();
         }
-        public bool DeleteFromDatabase(ObservableCollection<FileModel>? observableCollection = null)
+        /// <summary>
+        /// Удаляет оригинатор модели из базы данных. Если же удаление не произошло, то файл остается в коллекциях
+        /// </summary>
+        /// <param name="observableCollections">коллекции для удаления, в которых содержится данная модель</param>
+        /// <returns>true, если удаление произошло успешно, в ином случае - false</returns>
+        public bool DeleteFromDatabase(params ObservableCollection<FileModel>[] observableCollections)
         {
             bool deleted = true;
             using (var database = new MyDbContext())
@@ -53,7 +77,8 @@ namespace CrossplatformRadioApp.Models
                 {
                     database.SavedFiles.Remove(databaseEntry);
                     database.SaveChanges();
-                    observableCollection?.Remove(this);
+                    foreach (var collection in observableCollections)
+                        collection.Remove(this);
                 }
                 catch
                 {
@@ -62,40 +87,45 @@ namespace CrossplatformRadioApp.Models
             }
             return deleted;
         }
+        /// <summary>
+        /// Получает все записи файлов из базы данных в виде моделей
+        /// </summary>
+        /// <returns>коллекция моделей файлов из базы данных</returns>
         public static List<FileModel> GetFileModelsFromDatabase()
         {
-            List<FileModel> fileModels;
-            using (var database = new MyDbContext())
-            {
-                fileModels = database.SavedFiles.ToList().Select(dbEntry => new FileModel(dbEntry)).ToList();
-            }
-            return fileModels;
+            using var database = new MyDbContext();
+            return database.SavedFiles.ToList().Select(dbEntry => new FileModel(dbEntry)).ToList();
         }
-        public static void SaveMultipleFileModelsToDirectory(IEnumerable<FileModel> fileModels, string directory, Func<bool>? actionIfFileExist=null)
+        /// <summary>
+        /// Загружает несколько моделей файлов в директорию из базы данных, подробнее в <see cref="SaveToDirectory"/>
+        /// </summary>
+        /// <param name="fileModels"></param>
+        /// <param name="directory"></param>
+        /// <param name="actionIfFileExist">условие для каждого файла</param>
+        public static void SaveMultipleFileModelsToDirectory(IEnumerable<FileModel> fileModels, string directory, Func<string, bool>? actionIfFileExist=null)
         {
             foreach (var fileModel in fileModels)
             {
                 fileModel.SaveToDirectory(directory, actionIfFileExist);
             }
         }
-        public static void DeleteMultipleFilesFromDatabase(IEnumerable<FileModel> fileModels, ObservableCollection<FileModel>? observableCollection = null)
+        /// <summary>
+        /// Удаляет несколько моделей файлов из базы данных, подробнее в <see cref="DeleteFromDatabase"/>
+        /// </summary>
+        /// <param name="fileModels">модели для удаления</param>
+        /// <param name="observableCollections">коллекции, в которых модели должны быть удалены</param>
+        public static void DeleteMultipleFilesFromDatabase(IEnumerable<FileModel> fileModels, params ObservableCollection<FileModel>[] observableCollections)
         {
             foreach(var fileModel in fileModels)
             {
-                fileModel.DeleteFromDatabase(observableCollection);
+                fileModel.DeleteFromDatabase(observableCollections);
             }
         }
-        public static FileModel WriteFileIntoDatabase(string filepath)
-        {
-            var newFile = _GetFileAsDBEntry(filepath);
-            using (var database = new MyDbContext())
-            {
-                database.SavedFiles.Add(newFile);
-                try { database.SaveChanges(); }
-                catch { newFile = null; }
-            }
-            return newFile == null ? null : new FileModel(newFile);
-        }
+        /// <summary>
+        /// Записывает несколько файлов по выбранным путям в базу данных
+        /// </summary>
+        /// <param name="filepaths">пути к файлам</param>
+        /// <returns>модели записанных файлов</returns>
         public static List<FileModel> WriteMultipleFilesIntoDatabase(IEnumerable<string> filepaths)
         {
             List<FileModel> result;
@@ -117,8 +147,7 @@ namespace CrossplatformRadioApp.Models
             }
             return result;
         }
-
-        public static SavedFile _GetFileAsDBEntry(string filepath)
+        private static SavedFile _GetFileAsDBEntry(string filepath)
         {
             var newFile = new SavedFile
             {

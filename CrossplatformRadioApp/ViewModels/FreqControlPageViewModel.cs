@@ -73,9 +73,6 @@ public class FreqControlPageViewModel
             InRecording = false;
             UpdateButtons();
             Device.StopReadSamplesAsync();
-            var idk = FileModel._GetFileAsDBEntry(@"C:\Users\Ренатзве Здкин\Downloads\запись");
-            idk.FileName = FileName;
-            db.SavedFiles.Add(idk);
             //Device.ResetDeviceBuffer();
             db.SaveChanges();
             db.Dispose();

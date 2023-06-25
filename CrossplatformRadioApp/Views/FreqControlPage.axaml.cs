@@ -19,12 +19,11 @@ public partial class FreqControlPage : UserControl
         InitializeComponent();
         //IGraph = new ();
         //QGraph = new();
-        var cbmb = new ComboboxMessageBox(
-            RtlSdrDeviceManager.Instance.Devices.Select(pair => new DeviceWithId(pair.Key, pair.Value)).ToList(),
+        ComboboxMessageBox.ShowDialog(
+            Manager.Instance.MainWindow,
+            RtlSdrDeviceManager.Instance.Devices.Select(pair => new DeviceWithId(pair.Key, pair.Value)).ToList() ,
             "DeviceName",
-            "Выберите устройство для чтения", InitDevice
-            );
-        cbmb.ShowDialog(Manager.Instance.MainWindow);
+            "Выберите устройство для чтения", InitDevice);
     }
 
     private void InitDevice(object o)
