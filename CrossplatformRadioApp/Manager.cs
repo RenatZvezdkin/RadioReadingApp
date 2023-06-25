@@ -9,6 +9,8 @@ namespace CrossplatformRadioApp;
 
 public class Manager
 {
+    private SettingsFile _settings;
+    public SettingsFile Settings => _settings;
     private UserControl _selectedPage;
     /// <summary>
     /// Основное окно, на котором должно происходить основное действие
@@ -45,14 +47,19 @@ public class Manager
         File.ReadAllLines(_getExecutingPath + "settings.txt");
     private string _getPropertyFromSettings(string prop) =>
         _settingsLines.First(l => l.StartsWith(prop + ":")).Remove(0,prop.Length+1).Trim();
+
     /// <summary>
     /// возвращает строку подключения к базе данных MariaDB/MySQL
     /// </summary>
-    public string ConnectionString => _getPropertyFromSettings("connectionstring");
+    public string? ConnectionString =>
+        _settings.GetValueFromProperty("connectionstring");
+    //_getPropertyFromSettings("connectionstring");
     /// <summary>
     /// возвращает версию базы данных из файла настроек
     /// </summary>
-    public string DatabaseVersion => _getPropertyFromSettings("databaseversion");
+    public string? DatabaseVersion =>
+        _settings.GetValueFromProperty("databaseversion");
+    //_getPropertyFromSettings("databaseversion");
     /// <summary>
     /// возвращает ссылку на значение Manager
     /// </summary>
@@ -60,14 +67,17 @@ public class Manager
     /// <summary>
     /// true, если подключение с базой данных существует, иначе - false
     /// </summary>
-    public bool Connected {
+    public bool ConnectedToDatabase {
         get
         {
+            if (ConnectionString==null || DatabaseVersion==null)
+                return false;
             using var db = new MyDbContext();
             return db.Database.CanConnect();
         }
     }
     private Manager()
     {
+        _settings = new SettingsFile(GoUpByDirectory(Assembly.GetExecutingAssembly().Location));
     }
 }

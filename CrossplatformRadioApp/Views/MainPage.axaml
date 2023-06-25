@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:CrossplatformRadioApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CrossplatformRadioApp.Views.MainPage">
+             x:Class="CrossplatformRadioApp.Views.MainPage"
+             Loaded="Control_OnLoaded">
     <UserControl.DataContext>
         <viewModels:MainPageViewModel/>
     </UserControl.DataContext>

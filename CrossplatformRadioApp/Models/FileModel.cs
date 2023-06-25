@@ -70,7 +70,7 @@ class FileModel
     /// <summary>
     /// Удаляет оригинатор модели из базы данных. Если же удаление не произошло, то файл остается в коллекциях
     /// </summary>
-    /// <param name="observableCollections">коллекции для удаления, в которых содержится данная модель</param>
+    /// <param name="observableCollections">коллекции, в которых требуется удалить данную модель</param>
     /// <returns>true, если удаление произошло успешно, в ином случае - false</returns>
     public bool DeleteFromDatabase(params ObservableCollection<FileModel>[] observableCollections)
     {

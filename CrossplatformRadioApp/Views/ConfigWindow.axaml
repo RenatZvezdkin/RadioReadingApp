@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:CrossplatformRadioApp.ViewModels"
+        mc:Ignorable="d" Width="500" Height="500"
+        x:Class="CrossplatformRadioApp.Views.ConfigWindow"
+        Title="ConfigWindow"
+        Closed="TopLevel_OnClosed">
+    <Window.Styles>
+        <StyleInclude Source="avares://CrossplatformRadioApp/Views/MainStyles.axaml"/>
+    </Window.Styles>
+    <Window.DataContext>
+        <viewModels:ConfigWindowViewModel/>
+    </Window.DataContext>
+    <StackPanel Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Orientation="Vertical">
+        <TextBlock TextAlignment="Center" FontSize="20" TextWrapping="Wrap" 
+                   Text="Введите строку подключения к базе данных" Margin="10"/>
+        <TextBox Width="450" FontSize="16" 
+                 Text="{Binding ConnString, Mode=TwoWay}"/>
+        <ComboBox Margin="10" 
+                  SelectedItem="{Binding SelectedDatabase}" 
+                  ItemsSource="{Binding DatabasesComboboxItems}"/>
+        <Button Content="Попробовать войти" Command="{Binding ScaryCommandToCheckDatabase}"/>
+        
+    </StackPanel>
+</Window>
