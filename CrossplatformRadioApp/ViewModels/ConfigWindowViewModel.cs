@@ -39,8 +39,8 @@ public class ConfigWindowViewModel : INotifyPropertyChanged
                 {
                     Manager.Instance.Settings.AddProperty("connectionstring", "database=RadioRecords;"+ConnString);
                     Manager.Instance.Settings.AddProperty("databaseversion", con.ServerVersion+"-"+SelectedDatabase);
-                    using MySqlCommand command = new MySqlCommand("command lol",con);
-                    command.ExecuteNonQuery();
+                        //using MySqlCommand command = new MySqlCommand("command lol",con);
+                    //command.ExecuteNonQuery();
                     Window.Close();
                 }
             }

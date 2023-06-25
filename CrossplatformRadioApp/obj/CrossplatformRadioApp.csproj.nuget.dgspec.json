@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "R:\\Установкщики\\Установщики системных компонентов\\MyNugetPackages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,43 +43,59 @@
           "dependencies": {
             "Avalonia": {
               "target": "Package",
-              "version": "[11.0.0-preview8, )"
+              "version": "[11.0.0-rc1.1, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
-              "version": "[11.0.0-preview8, )"
+              "version": "[11.0.0-rc1.1, )"
             },
             "Avalonia.Diagnostics": {
               "target": "Package",
-              "version": "[11.0.0-preview8, )"
+              "version": "[11.0.0-rc1.1, )"
             },
             "Avalonia.ReactiveUI": {
               "target": "Package",
-              "version": "[11.0.0-preview8, )"
+              "version": "[11.0.0-rc1.1, )"
             },
             "MessageBox.Avalonia": {
               "target": "Package",
-              "version": "[2.3.1-prev7.0, )"
+              "version": "[2.3.1-rc1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.8, )"
+            },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "RtlSdrManager": {
+              "target": "Package",
+              "version": "[0.2.1, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.5-beta, )"
+            },
+            "ScottPlot.Avalonia": {
+              "target": "Package",
+              "version": "[5.0.5-beta, )"
             }
           },
           "imports": [
@@ -97,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }

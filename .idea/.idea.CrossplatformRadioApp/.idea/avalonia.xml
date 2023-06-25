@@ -5,6 +5,7 @@
       <map>
         <entry key="CrossplatformRadioApp/App.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
         <entry key="CrossplatformRadioApp/Views/ComboboxMessageBox.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
+        <entry key="CrossplatformRadioApp/Views/ConfigWindow.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
         <entry key="CrossplatformRadioApp/Views/FilesPage.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
         <entry key="CrossplatformRadioApp/Views/FreqControlPage.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
         <entry key="CrossplatformRadioApp/Views/MainPage.axaml" value="CrossplatformRadioApp/CrossplatformRadioApp.csproj" />
