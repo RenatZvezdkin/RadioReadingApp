@@ -40,17 +40,17 @@ public class ConfigWindowViewModel : ViewModelBase
                     Manager.Instance.Settings.AddProperty("databaseversion", con.ServerVersion+"-"+SelectedDatabase);
                     command.ExecuteNonQuery();
                     if (!Manager.Instance.SDRsArePresent)
-                        MessageBox.Avalonia.MessageBoxManager.
-                        GetMessageBoxStandardWindow("RtlSdrLib", "В проекте отсутствует RtlSdrLib.dll и его зависимости. Пока они не будут добавлены функция записи частот не будет доступна. Скачать их вы можете на \"ftp.osmocom.org\"").
-                        Show(Window);
+                        MsBox.Avalonia.MessageBoxManager.
+                        GetMessageBoxStandard("RtlSdrLib", "В проекте отсутствует RtlSdrLib.dll и его зависимости. Пока они не будут добавлены функция записи частот не будет доступна. Скачать их вы можете на \"ftp.osmocom.org\"").
+                        ShowWindowDialogAsync(Window);
                     Window.Close();
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Avalonia.MessageBoxManager.
-                    GetMessageBoxStandardWindow("Подключение", "Во время подключения произошла ошибка, перепроверьте данные").
-                    Show(Window);
+                MsBox.Avalonia.MessageBoxManager.
+                    GetMessageBoxStandard("Подключение", "Во время подключения произошла ошибка, перепроверьте данные").
+                    ShowAsync();
             }
         });
         SelectedDatabase = DatabasesComboboxItems.First();

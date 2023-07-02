@@ -9,6 +9,7 @@ using CrossplatformRadioApp.Models;
 using CrossplatformRadioApp.Views;
 using DynamicData;
 using MessageBox.Avalonia.Enums;
+using MsBox.Avalonia.Enums;
 
 namespace CrossplatformRadioApp.ViewModels
 {
@@ -53,9 +54,9 @@ namespace CrossplatformRadioApp.ViewModels
             },o => AnyModelsSelected);
             DeleteCommand = new RelayCommand(async o =>
             {
-                using var task = MessageBox.Avalonia.MessageBoxManager.
-                    GetMessageBoxStandardWindow("Удаление", "Вы уверены, что хотите удалить выбранные файлы?", ButtonEnum.YesNo).
-                    ShowDialog(Manager.Instance.MainWindow);
+                using var task =  MsBox.Avalonia.MessageBoxManager.
+                    GetMessageBoxStandard("Удаление", "Вы уверены, что хотите удалить выбранные файлы?", ButtonEnum.YesNo).
+                    ShowWindowDialogAsync(Manager.Instance.MainWindow);
                 if (await task == ButtonResult.Yes)
                     FileModel.DeleteMultipleFilesFromDatabase(SelectedFileModels, FileModels);
             },o => AnyModelsSelected);
