@@ -18,25 +18,25 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.0-rc2.2" />
-        <PackageReference Include="Avalonia.Desktop" Version="11.0.0-rc2.2" />
+        <PackageReference Include="Avalonia" Version="11.0.0" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-rc2.2" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-rc2.2" />
-        <PackageReference Include="MessageBox.Avalonia" Version="3.0.1-rc2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8">
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0" />
+        <PackageReference Include="MessageBox.Avalonia" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.9">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="NAudio" Version="2.1.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
         <PackageReference Include="RtlSdrManager" Version="0.2.1" />
-        <PackageReference Include="ScottPlot" Version="5.0.5-beta" />
-        <PackageReference Include="ScottPlot.Avalonia" Version="5.0.5-beta" />
+        <PackageReference Include="ScottPlot" Version="5.0.6-beta" />
+        <PackageReference Include="ScottPlot.Avalonia" Version="5.0.6-beta" />
     </ItemGroup>
 </Project>

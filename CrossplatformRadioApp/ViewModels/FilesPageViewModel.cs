@@ -8,7 +8,6 @@ using Avalonia.Platform.Storage;
 using CrossplatformRadioApp.Models;
 using CrossplatformRadioApp.Views;
 using DynamicData;
-using MessageBox.Avalonia.Enums;
 using MsBox.Avalonia.Enums;
 
 namespace CrossplatformRadioApp.ViewModels
